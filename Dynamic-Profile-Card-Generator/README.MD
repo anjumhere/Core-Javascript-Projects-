@@ -12,7 +12,7 @@ A modern, responsive profile card generator with stunning animations and glassmo
 
 - [Overview](#overview)
 - [Features](#features)
-- [Demo](#demo)
+- [Demo](https://anjumhere.github.io/Core-Javascript-Projects-/Dynamic-Profile-Card-Generator/index.html)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Technologies Used](#technologies-used)
