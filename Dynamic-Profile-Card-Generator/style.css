@@ -227,7 +227,7 @@ a,
 .card {
   border: 2px solid rgba(138, 43, 226, 0.4);
   padding: 30px;
-  margin: 0; /* Removed margins to avoid issues; spacing handled by container gap */
+  margin: 0;  
   border-radius: 20px;
   font-family: "Poppins", sans-serif;
   background: rgba(255, 255, 255, 0.06);
