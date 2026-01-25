@@ -57,7 +57,7 @@ This repository contains multiple mini-projects, each focusing on different Java
 **Tech Stack:** HTML5, CSS3, Vanilla JavaScript  
 **Key Concepts:** Event Listeners, DOM Creation, Form Handling
 
-[View Project](https://github.com/anjumhere/Core-Javascript-Projects-/tree/main/Dynamic-Profile-Card-Generator) | [Live Demo](#) | [Documentation](./profilepop/README.md)
+[View Project](https://github.com/anjumhere/Core-Javascript-Projects-/tree/main/Dynamic-Profile-Card-Generator) | [Live Demo](https://anjumhere.github.io/Core-Javascript-Projects-/Dynamic-Profile-Card-Generator/index.html) | [Documentation](./profilepop/README.md)
 
 ---
 
