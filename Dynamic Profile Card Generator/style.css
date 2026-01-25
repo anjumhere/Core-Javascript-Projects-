@@ -1,0 +1,381 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+  color: white;
+  font-family: "Poppins", sans-serif;
+  min-height: 100vh;
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+#main {
+  border-radius: 20px;
+  max-width: 1400px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 450px 1fr;
+  gap: 30px;
+  align-items: start;
+}
+
+#main form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 40px;
+  border: 2px solid rgba(138, 43, 226, 0.3);
+  width: 100%;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(138, 43, 226, 0.2);
+  transition: all 0.3s ease;
+  position: sticky;
+  top: 40px;
+  height: fit-content;
+}
+
+#main form:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(138, 43, 226, 0.3);
+  border-color: rgba(138, 43, 226, 0.5);
+}
+
+#main input {
+  height: 50px;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  outline: none;
+  background: rgba(255, 255, 255, 0.08);
+  color: white;
+  padding: 0 20px;
+  font-size: 15px;
+  font-family: "Poppins", sans-serif;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+#main input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 300;
+}
+
+#main input:focus {
+  border-color: #8a2be2;
+  background: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 0 20px rgba(138, 43, 226, 0.3);
+  transform: translateX(5px);
+}
+
+#submit {
+  border-radius: 12px;
+  width: 140px;
+  height: 50px;
+  border: none;
+  outline: none;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+  margin-top: 10px;
+}
+
+#submit:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 25px rgba(102, 126, 234, 0.6);
+  background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+}
+
+#submit:active {
+  transform: translateY(-1px);
+}
+
+/* Cards Container - uses the second grid column */
+.cards-container {
+  grid-column: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Even 20px gap between all cards */
+  align-items: center; /* Center cards horizontally */
+  justify-content: center; /* Center the stack vertically in the column */
+  min-height: 100vh; /* Ensure vertical centering works by giving height */
+}
+
+.card {
+  border: 2px solid rgba(138, 43, 226, 0.4);
+  padding: 30px;
+  margin: 0; /* Removed margins to avoid issues; spacing handled by container gap */
+  border-radius: 20px;
+  font-family: "Poppins", sans-serif;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 450px;
+  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  animation: popIn 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle,
+    rgba(138, 43, 226, 0.1) 0%,
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+.card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 15px 50px rgba(138, 43, 226, 0.4);
+  border-color: rgba(138, 43, 226, 0.8);
+}
+
+@keyframes popIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3) translateY(-50px) rotate(-10deg);
+  }
+  50% {
+    transform: scale(1.1) translateY(-10px) rotate(5deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0) rotate(0deg);
+  }
+}
+
+.profile {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  margin-bottom: 20px;
+  box-shadow: 0 8px 25px rgba(138, 43, 226, 0.4);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.profile::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  padding: 3px;
+  background: linear-gradient(135deg, #667eea, #764ba2, #f093fb);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: rotate 3s linear infinite;
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.profile:hover {
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 12px 35px rgba(138, 43, 226, 0.6);
+}
+
+.profile img {
+  object-fit: cover;
+  border: 3px solid rgba(138, 43, 226, 0.6);
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.profile img:hover {
+  transform: scale(1.05);
+}
+
+.card h3 {
+  margin: 15px 0 8px 0;
+  font-size: 24px;
+  font-weight: 600;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.card h5 {
+  font-size: 16px;
+  margin: 8px 0 15px 0;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.card p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 300;
+  margin-top: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  #main {
+    grid-template-columns: 400px 1fr;
+    gap: 25px;
+  }
+
+  #main form {
+    padding: 35px;
+  }
+
+  .card {
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 992px) {
+  #main {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  #main form {
+    position: relative;
+    top: 0;
+    max-width: 100%;
+  }
+
+  .cards-container {
+    grid-column: 1;
+  }
+
+  .card {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 20px 15px;
+  }
+
+  #main {
+    gap: 20px;
+  }
+
+  #main form {
+    padding: 30px 25px;
+  }
+
+  #main input {
+    height: 45px;
+    font-size: 14px;
+  }
+
+  #submit {
+    width: 120px;
+    height: 45px;
+    font-size: 14px;
+  }
+
+  .card {
+    padding: 25px;
+  }
+
+  .card h3 {
+    font-size: 22px;
+  }
+
+  .card h5 {
+    font-size: 14px;
+  }
+
+  .profile {
+    width: 90px;
+    height: 90px;
+  }
+
+  .profile img {
+    width: 90px;
+    height: 90px;
+  }
+}
+
+@media (max-width: 480px) {
+  #main form {
+    padding: 25px 20px;
+  }
+
+  #main input {
+    height: 42px;
+    font-size: 13px;
+  }
+
+  #submit {
+    width: 110px;
+    height: 42px;
+    font-size: 13px;
+  }
+
+  .card {
+    padding: 20px;
+  }
+
+  .card h3 {
+    font-size: 20px;
+  }
+
+  .card h5 {
+    font-size: 13px;
+  }
+
+  .card p {
+    font-size: 13px;
+  }
+
+  .profile {
+    width: 80px;
+    height: 80px;
+  }
+
+  .profile img {
+    width: 80px;
+    height: 80px;
+  }
+}
