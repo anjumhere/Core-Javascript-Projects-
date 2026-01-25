@@ -134,7 +134,7 @@ form.addEventListener("submit", (e) => {
   card.appendChild(h3);
   card.appendChild(h5);
   card.appendChild(p);
-  cardsContainer.appendChild(card); // Append to the container instead of main
+  cardsContainer.appendChild(card); // Append to the container instead of main.
   inputs.forEach((val) => {
     if (val.type !== "submit") {
       val.value = "";
