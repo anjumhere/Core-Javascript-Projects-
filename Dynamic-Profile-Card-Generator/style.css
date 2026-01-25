@@ -446,7 +446,14 @@ a,
     height: 90px;
   }
 }
-
+#dot{
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background-color: red;
+  position: absolute;
+  opacity: 0.1;
+  transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.2s;}
 @media (max-width: 480px) {
   #main form {
     padding: 25px 20px;

@@ -1,125 +1,52 @@
+// Step 1: Select DOM elements
 const form = document.querySelector("form");
 const inputs = document.querySelectorAll("input");
 const main = document.querySelector("#main");
-// Step 1: Select cursor elements
-const dot = document.querySelector("#dot");
-const ring = document.querySelector("#cursor-ring");
-let mouseX = 0;
-let mouseY = 0;
-let dotX = 0;
-let dotY = 0;
-let ringX = 0;
-let ringY = 0;
-let trailTimeout = null;
+const dot = document.querrySelector("#dot");
 
-// Step 2: Track mouse movement
-window.addEventListener("mousemove", (e) => {
-  mouseX = e.clientX;
-  mouseY = e.clientY;
+// adding a fun feature
 
-  // Create trail effect every 30ms
-  createTrail(e.clientX, e.clientY);
+window.addEventListener("mousemove", (val) => {
+  dot.style.top = val.clientY + "px";
+  dot.style.left = val.clientX + "px";
 });
 
-// Step 3: Smooth cursor animation using requestAnimationFrame
-function animateCursor() {
-  // Smooth follow effect with easing
-  dotX += (mouseX - dotX) * 0.3;
-  dotY += (mouseY - dotY) * 0.3;
-
-  ringX += (mouseX - ringX) * 0.15;
-  ringY += (mouseY - ringY) * 0.15;
-
-  // Apply position
-  dot.style.left = dotX + "px";
-  dot.style.top = dotY + "px";
-
-  ring.style.left = ringX + "px";
-  ring.style.top = ringY + "px";
-
-  requestAnimationFrame(animateCursor);
-}
-
-// Step 4: Start animation loop
-animateCursor();
-
-// Step 5: Create trail particles
-function createTrail(x, y) {
-  if (trailTimeout) return;
-
-  trailTimeout = setTimeout(() => {
-    const trail = document.createElement("div");
-    trail.classList.add("cursor-trail");
-    trail.style.left = x + "px";
-    trail.style.top = y + "px";
-    document.body.appendChild(trail);
-
-    // Remove trail after animation
-    setTimeout(() => {
-      trail.remove();
-    }, 600);
-
-    trailTimeout = null;
-  }, 30);
-}
-
-// Step 6: Add hover effects for interactive elements
-const interactiveElements = document.querySelectorAll(
-  'button, input, a, .card, form, [type="submit"]',
-);
-
-interactiveElements.forEach((element) => {
-  element.addEventListener("mouseenter", () => {
-    document.body.classList.add("cursor-hover");
-  });
-
-  element.addEventListener("mouseleave", () => {
-    document.body.classList.remove("cursor-hover");
-  });
-});
-
-// Step 7: Add click effect
-document.addEventListener("mousedown", () => {
-  document.body.classList.add("cursor-click");
-});
-
-document.addEventListener("mouseup", () => {
-  document.body.classList.remove("cursor-click");
-});
-
-// Step 8: Hide cursor when leaving window
-document.addEventListener("mouseleave", () => {
-  dot.style.opacity = "0";
-  ring.style.opacity = "0";
-});
-
-document.addEventListener("mouseenter", () => {
-  dot.style.opacity = "1";
-  ring.style.opacity = "1";
-});
-// Create a container for the cards
+// Step 2: Create a container for all cards to organize them properly
 const cardsContainer = document.createElement("div");
 cardsContainer.classList.add("cards-container");
 main.appendChild(cardsContainer);
 
+// Step 3: Add event listener to the form for submit event
 form.addEventListener("submit", (e) => {
+  // Step 4: Prevent default form submission behavior (page reload)
   e.preventDefault();
 
+  // Step 5: Create main card element
   let card = document.createElement("div");
   card.classList.add("card");
 
+  // Step 6: Create profile picture container
   let profile = document.createElement("div");
   profile.classList.add("profile");
 
+  // Step 7: Create image element for profile picture
   let img = document.createElement("img");
-  // img.setAttribute("src", inputs[0].value);
+  // Alternative approach: img.setAttribute("src", inputs[0].value);
+  // You can also use this to get values from input fields by using indexes manually!
 
+  // Step 8: Create heading element for name
   let h3 = document.createElement("h3");
-  // h3.textContent = inputs[1].value;
+  // Alternative: h3.textContent = inputs[1].value;  ---------------------------------->>>>>>>>>
+
+  // Step 9: Create subheading element for occupation
   let h5 = document.createElement("h5");
-  // h5.textContent = inputs[2].value;
+  // Alternative: h5.textContent = inputs[2].value;   --------------------------------->>>>>>>>>
+
+  // Step 10: Create paragraph element for information
   let p = document.createElement("p");
-  // p.textContent = inputs[3].value;
+  // Alternative: p.textContent = inputs[3].value;    --------------------------------->>>>>>>>>
+
+  // Step 11: Loop through all inputs and populate card elements with user data
   inputs.forEach((input) => {
     if (input.name === "image") img.setAttribute("src", input.value);
     if (input.name === "name") h3.textContent = input.value;
@@ -127,17 +54,25 @@ form.addEventListener("submit", (e) => {
     if (input.name === "info") p.textContent = input.value;
   });
 
+  // Step 12: Append image to profile container
   profile.appendChild(img);
-  card.appendChild(profile);
 
+  // Step 13: Append all elements to the card
+  card.appendChild(profile);
   card.appendChild(h3);
   card.appendChild(h5);
   card.appendChild(p);
-  cardsContainer.appendChild(card); // Append to the container instead of main
+
+  // Step 14: Append the complete card to the cards container (not directly to main)
+  cardsContainer.appendChild(card);
+
+  // Step 15: Clear all input fields except submit button
   inputs.forEach((val) => {
     if (val.type !== "submit") {
       val.value = "";
     }
   });
+
+  // Step 16: Reset the entire form (alternative to manual clearing)
   form.reset();
 });
