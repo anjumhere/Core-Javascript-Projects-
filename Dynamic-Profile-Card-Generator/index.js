@@ -2,6 +2,15 @@
 const form = document.querySelector("form");
 const inputs = document.querySelectorAll("input");
 const main = document.querySelector("#main");
+const dot = document.querrySelector("#dot")
+
+// adding a fun feature 
+
+window.addEventListener("mousemove", (val) => {
+  dot.style.top = val.clientY + "px";
+  dot.style.left = val.clientX + "px";
+
+});
 
 // Step 2: Create a container for all cards to organize them properly
 const cardsContainer = document.createElement("div");
