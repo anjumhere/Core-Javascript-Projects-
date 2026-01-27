@@ -8,6 +8,9 @@ let bar = btn.addEventListener("click", () => {
       count++;
       progress.style.width = `${count}%`;
       percentage.textContent = `${count}%`;
+    } else {
+      clearInterval(int);
+      // console.log("interval cleared");
     }
   }, 3000 / 100);
 });
