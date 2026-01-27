@@ -59,7 +59,7 @@ This repository contains multiple mini-projects, each focusing on different Java
 
 [View Project](https://github.com/anjumhere/Core-Javascript-Projects-/tree/main/Email-and-Password-Validation) | [Live Demo](https://anjumhere.github.io/Core-Javascript-Projects-/Dynamic-Profile-Card-Generator/index.html) | [Documentation](./profilepop/README.md)
 
-### 2️⃣ [Email and Password Validator](https://github.com/anjumhere/Core-Javascript-Projects-/tree/main/form%20validation)
+### 2️⃣ [Email and Password Validator](https://github.com/anjumhere/Core-Javascript-Projects-/tree/main/Email-and-Password-Validation)
 
 **Real-time form validation with instant feedback and professional dark theme UI**
 
