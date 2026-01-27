@@ -57,7 +57,7 @@ This repository contains multiple mini-projects, each focusing on different Java
 **Tech Stack:** HTML5, CSS3, Vanilla JavaScript  
 **Key Concepts:** Event Listeners, DOM Creation, Form Handling
 
-[View Project](https://github.com/anjumhere/Core-Javascript-Projects-/tree/main/Dynamic-Profile-Card-Generator) | [Live Demo](https://anjumhere.github.io/Core-Javascript-Projects-/Dynamic-Profile-Card-Generator/index.html) | [Documentation](./profilepop/README.md)
+[View Project](https://github.com/anjumhere/Core-Javascript-Projects-/tree/main/Email-and-Password-Validation) | [Live Demo](https://anjumhere.github.io/Core-Javascript-Projects-/Dynamic-Profile-Card-Generator/index.html) | [Documentation](./profilepop/README.md)
  
 ### 2️⃣ [Email and Password Validator](https://github.com/anjumhere/Core-Javascript-Projects-/tree/main/form%20validation)
 **Real-time form validation with instant feedback and professional dark theme UI**
@@ -86,7 +86,7 @@ A production-ready authentication form validator that provides real-time feedbac
 - Empty field detection
 - Real-time requirement checklist
 
-[View Project](https://github.com/anjumhere/Core-Javascript-Projects-/tree/main/form%20validation) | [Live Demo](https://anjumhere.github.io/Core-Javascript-Projects-/form%20validation/) | [Documentation](https://github.com/anjumhere/Core-Javascript-Projects-/blob/main/form%20validation/README.md)
+[View Project](https://github.com/anjumhere/Core-Javascript-Projects-/tree/main/Email-and-Password-Validation) | [Live Demo](https://anjumhere.github.io/Core-Javascript-Projects-/Email-and-Password-Validation/) | [Documentation](https://github.com/anjumhere/Core-Javascript-Projects-/blob/main/Email-and-Password-Validation/README.MD)
 
 ### 3️⃣ [Project Name]
 
