@@ -1,0 +1,265 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  padding: 40px 20px;
+  color: #e2e8f0;
+}
+
+.container {
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  background: #1e293b;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(148, 163, 184, 0.1);
+}
+
+h1 {
+  font-size: 26px;
+  font-weight: 600;
+  color: #f1f5f9;
+  text-align: center;
+  margin-bottom: 32px;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.form-group {
+  margin-bottom: 24px;
+}
+
+label {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  color: #cbd5e1;
+  margin-bottom: 8px;
+}
+
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 12px 16px;
+  font-size: 15px;
+  border: 1px solid #334155;
+  border-radius: 8px;
+  background-color: #0f172a;
+  color: #e2e8f0;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+input[type="email"]::placeholder,
+input[type="password"]::placeholder {
+  color: #64748b;
+}
+
+input[type="email"]:focus,
+input[type="password"]:focus {
+  outline: none;
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+input.valid {
+  border-color: #10b981;
+  background-color: rgba(16, 185, 129, 0.05);
+}
+
+input.invalid {
+  border-color: #ef4444;
+  background-color: rgba(239, 68, 68, 0.05);
+}
+
+.error-message,
+.success-message,
+#emptyPass,
+#emptyMail {
+  display: none;
+  font-size: 13px;
+  margin-top: 8px;
+  padding: 8px 12px;
+  border-radius: 6px;
+}
+
+#emptyPass,
+#emptyMail {
+  color: #fbbf24;
+  background-color: rgba(251, 191, 36, 0.1);
+  border-left: 3px solid #fbbf24;
+}
+
+.error-message {
+  color: #fca5a5;
+  background-color: rgba(239, 68, 68, 0.1);
+  border-left: 3px solid #ef4444;
+}
+
+.success-message {
+  color: #6ee7b7;
+  background-color: rgba(16, 185, 129, 0.1);
+  border-left: 3px solid #10b981;
+}
+
+.error-message.show,
+.success-message.show {
+  display: block;
+}
+
+.requirements {
+  margin-top: 12px;
+  padding: 16px;
+  background-color: rgba(15, 23, 42, 0.8);
+  border-radius: 8px;
+  border: 1px solid #334155;
+  display: none;
+}
+
+.requirements.show {
+  display: block;
+}
+
+.req-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: #94a3b8;
+  margin-bottom: 10px;
+}
+
+.requirements ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.requirements li {
+  font-size: 13px;
+  padding: 5px 0;
+  color: #94a3b8;
+  transition: color 0.2s ease;
+}
+
+.requirements li .icon {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  line-height: 16px;
+  text-align: center;
+  border-radius: 50%;
+  margin-right: 8px;
+  font-size: 10px;
+  font-weight: bold;
+}
+
+.requirements li.invalid .icon {
+  background-color: rgba(239, 68, 68, 0.2);
+  color: #ef4444;
+}
+
+.requirements li.valid {
+  color: #10b981;
+}
+
+.requirements li.valid .icon {
+  background-color: rgba(16, 185, 129, 0.2);
+  color: #10b981;
+}
+
+.requirements li.valid .icon::before {
+  content: "✓";
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 14px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: 8px;
+}
+
+.submit-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
+}
+
+.submit-btn:active {
+  transform: translateY(0);
+}
+
+.submit-btn:disabled {
+  background: #475569;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.success {
+  display: none;
+  text-align: center;
+  margin-top: 16px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #10b981;
+}
+
+/* Simple custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0f172a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  body {
+    padding: 20px 16px;
+  }
+
+  .container {
+    padding: 32px 24px;
+  }
+
+  h1 {
+    font-size: 22px;
+  }
+
+  input[type="email"],
+  input[type="password"] {
+    font-size: 16px;
+  }
+}
