@@ -7,9 +7,9 @@ A comprehensive collection of vanilla JavaScript projects demonstrating modern w
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 ![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 
-## 📋 Table of Contents
+## 📋 Projects List
 
-- [Overview](#overview)
+- [Dynamic Profile Card Generator](https://anjumhere.github.io/Core-Javascript-Projects-/Dynamic-Profile-Card-Generator/index.html)
 - [Projects](#projects)
 - [Getting Started](#getting-started)
 - [Project Structure](#project-structure)
