@@ -9,7 +9,7 @@ A comprehensive collection of vanilla JavaScript projects demonstrating modern w
 
 ## 📋 Projects List
 
-- [Dynamic Profile Card Generator](https://github.com/anjumhere/Core-Javascript-Projects-/tree/main/Dynamic-Profile-Card-Generator)
+- [Dynamic Profile Card Generator](https://github.com/anjumhere/Core-Javascript-Projects-/tree/b988ff073e7b2587ac04f1e6dc6a1e4f4e45341e/Email-and-Password-Validation)
 - [Email and Password Validator](https://github.com/anjumhere/Core-Javascript-Projects-/tree/main/form%20validation)
 - [Getting Started](#getting-started)
 - [Project Structure](#project-structure)
@@ -58,13 +58,15 @@ This repository contains multiple mini-projects, each focusing on different Java
 **Key Concepts:** Event Listeners, DOM Creation, Form Handling
 
 [View Project](https://github.com/anjumhere/Core-Javascript-Projects-/tree/main/Email-and-Password-Validation) | [Live Demo](https://anjumhere.github.io/Core-Javascript-Projects-/Dynamic-Profile-Card-Generator/index.html) | [Documentation](./profilepop/README.md)
- 
+
 ### 2️⃣ [Email and Password Validator](https://github.com/anjumhere/Core-Javascript-Projects-/tree/main/form%20validation)
+
 **Real-time form validation with instant feedback and professional dark theme UI**
 
 A production-ready authentication form validator that provides real-time feedback as users type. Features a sleek dark theme interface with live password strength indicators and comprehensive validation rules.
 
 **Key Features:**
+
 - ⚡ Real-time validation - Instant feedback on every keystroke
 - 🔒 Smart password checker - Live requirement updates with visual indicators
 - ✉️ RFC-compliant email validation - Industry-standard regex patterns
@@ -80,6 +82,7 @@ A production-ready authentication form validator that provides real-time feedbac
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)
 
 **Validation Features:**
+
 - Email format verification with custom regex
 - Password strength: 8+ chars, letters, numbers, special characters
 - Password confirmation matching
