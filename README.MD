@@ -9,8 +9,8 @@ A comprehensive collection of vanilla JavaScript projects demonstrating modern w
 
 ## 📋 Projects List
 
-- [Dynamic Profile Card Generator](https://anjumhere.github.io/Core-Javascript-Projects-/Dynamic-Profile-Card-Generator/index.html)
-- [Projects](#projects)
+- [Dynamic Profile Card Generator](https://github.com/anjumhere/Core-Javascript-Projects-/tree/main/Dynamic-Profile-Card-Generator)
+- [Email and Password Validator](https://github.com/anjumhere/Core-Javascript-Projects-/tree/main/form%20validation)
 - [Getting Started](#getting-started)
 - [Project Structure](#project-structure)
 - [Technologies Used](#technologies-used)
@@ -58,18 +58,35 @@ This repository contains multiple mini-projects, each focusing on different Java
 **Key Concepts:** Event Listeners, DOM Creation, Form Handling
 
 [View Project](https://github.com/anjumhere/Core-Javascript-Projects-/tree/main/Dynamic-Profile-Card-Generator) | [Live Demo](https://anjumhere.github.io/Core-Javascript-Projects-/Dynamic-Profile-Card-Generator/index.html) | [Documentation](./profilepop/README.md)
+ 
+### 2️⃣ [Email and Password Validator](https://github.com/anjumhere/Core-Javascript-Projects-/tree/main/form%20validation)
+**Real-time form validation with instant feedback and professional dark theme UI**
 
----
+A production-ready authentication form validator that provides real-time feedback as users type. Features a sleek dark theme interface with live password strength indicators and comprehensive validation rules.
 
-### 2️⃣ [Project Name]
+**Key Features:**
+- ⚡ Real-time validation - Instant feedback on every keystroke
+- 🔒 Smart password checker - Live requirement updates with visual indicators
+- ✉️ RFC-compliant email validation - Industry-standard regex patterns
+- 🎨 Professional dark theme - Modern, eye-friendly interface
+- 📱 Fully responsive design - Perfect on all devices
+- ✅ Visual feedback system - Color-coded borders and success/error messages
+- 🔄 Auto-reset functionality - Clears form after successful submission
+- ♿ Accessible and semantic HTML
 
-**Coming Soon**
+**Technologies Used:**
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)
 
-- Brief description
-- Key features
-- Technologies used
+**Validation Features:**
+- Email format verification with custom regex
+- Password strength: 8+ chars, letters, numbers, special characters
+- Password confirmation matching
+- Empty field detection
+- Real-time requirement checklist
 
-[View Project](#) | [Live Demo](#) | [Documentation](#)
+[View Project](https://github.com/anjumhere/Core-Javascript-Projects-/tree/main/form%20validation) | [Live Demo](#) | [Documentation](https://github.com/anjumhere/Core-Javascript-Projects-/blob/main/form%20validation/README.md)
 
 ---
 
