@@ -3,6 +3,8 @@ const percentage = document.querySelector(".percentage");
 const btn = document.getElementById("downloadBtn");
 let count = 1;
 let bar = btn.addEventListener("click", () => {
+  // progress.style.with = "0px";
+  // percentage.textContent = "0%";
   let int = setInterval(() => {
     if (count <= 99) {
       count++;
