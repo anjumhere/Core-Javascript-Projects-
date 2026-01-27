@@ -86,9 +86,7 @@ A production-ready authentication form validator that provides real-time feedbac
 - Empty field detection
 - Real-time requirement checklist
 
-[View Project](https://github.com/anjumhere/Core-Javascript-Projects-/tree/main/form%20validation) | [Live Demo](#) | [Documentation](https://github.com/anjumhere/Core-Javascript-Projects-/blob/main/form%20validation/README.md)
-
----
+[View Project](https://github.com/anjumhere/Core-Javascript-Projects-/tree/main/form%20validation) | [Live Demo](https://anjumhere.github.io/Core-Javascript-Projects-/form%20validation/) | [Documentation](https://github.com/anjumhere/Core-Javascript-Projects-/blob/main/form%20validation/README.md)
 
 ### 3️⃣ [Project Name]
 
