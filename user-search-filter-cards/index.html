@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Directory - Find Amazing People</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <h1 class="header-title">Filter Images</h1>
+        <p class="header-subtitle">Discover amazing people from around the world</p>
+      </header>
+
+      <div class="search-wrapper">
+        <div class="search-box">
+          <svg
+            class="search-icon"
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <circle cx="11" cy="11" r="8"></circle>
+            <path d="m21 21-4.35-4.35"></path>
+          </svg>
+          <input type="text" class="search" placeholder="Search by name..." id="searchInput" autocomplete="off" />
+        </div>
+      </div>
+
+      <div class="cards" id="cardsContainer"></div>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>
