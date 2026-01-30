@@ -119,7 +119,7 @@ A sophisticated theme switching system that automatically detects your operating
 
 [View Project](https://github.com/anjumhere/Core-Javascript-Projects-/tree/main/Theme-toggle-with-localStorage) | [Live Demo](https://anjumhere.github.io/Core-Javascript-Projects-/Theme-toggle-with-localStorage/)
 
- 4️⃣ A Simple Even/Odd Validator
+### 4️⃣ A Simple Even/Odd Validator
 
 Simple even and odd number checker using vanilla JavaScript, HTML, and CSS
 
@@ -137,7 +137,7 @@ Technologies: HTML, CSS, JavaScript
 
 View Project | Live Demo
 
-5️⃣ Rock-Paper-Scissors
+###5️⃣ Rock-Paper-Scissors
 
 Classic Rock-Paper-Scissors game built with vanilla JavaScript
 
@@ -155,7 +155,7 @@ Technologies: HTML, CSS, JavaScript
 
 View Project | Live Demo
 
-6️⃣ Calculator
+###6️⃣ Calculator
 
 A basic calculator for arithmetic operations using vanilla JavaScript
 
@@ -173,7 +173,7 @@ Technologies: HTML, CSS, JavaScript
 
 View Project | Live Demo
 
-7️⃣ Payroll Tax Calculator
+###7️⃣ Payroll Tax Calculator
 
 A simple payroll tax calculator built with JavaScript
 
@@ -191,7 +191,7 @@ Technologies: HTML, CSS, JavaScript
 
 View Project | Live Demo
 
-8️⃣ Random Password Generator
+###8️⃣ Random Password Generator
 
 Generate strong random passwords with user-selected criteria
 
@@ -209,7 +209,7 @@ Technologies: HTML, CSS, JavaScript
 
 View Project | Live Demo
 
-9️⃣ Todo List with Timer
+###9️⃣ Todo List with Timer
 
 Interactive todo list with countdown timer for tasks
 
@@ -227,7 +227,7 @@ Technologies: HTML, CSS, JavaScript
 
 View Project | Live Demo
 
-10️⃣ Weather Web App
+### 1️⃣0️⃣ Weather Web App
 
 Simple weather application fetching real-time data from an API
 
@@ -244,6 +244,69 @@ Key Features:
 Technologies: HTML, CSS, JavaScript
 
 View Project | Live Demo
+
+ ### 1️⃣1️⃣  User Search Filter Cards
+## 🚀 How It Works
+
+1. **Card Creation**
+   - Each user object has `name`, `pic`, and `bio`.
+   - JS creates a `<div class="card">` with:
+     - `<img>` for the picture
+     - `.blur-layer` for glassy overlay
+     - `.content` div containing `<h3>` and `<p>`.
+
+2. **Carousel**
+   - `.cards-track` uses CSS keyframes for infinite scroll.
+   - Hover pauses the animation for better UX.
+
+3. **Search Filter**
+   - Input listens for `input` events.
+   - Filters cards in **real-time**:
+     - Empty → show carousel
+     - Typed → show filtered grid layout
+
+4. **Responsive Animations**
+   - Cards scale, lift, and shadow on hover.
+   - Fade-in animation on load.
+   - Mobile-friendly resizing.
+
+---
+
+## 📦 Project Structure
+
+user-search-filter-cards/
+│
+├─ index.html # HTML container and search input
+├─ style.css # CSS for carousel, cards, animations, blur
+├─ script.js # JavaScript logic for creating cards and filtering
+├─ README.md # Project documentation
+└─ assets/ # Optional folder for images/GIFs
+
+ 
+- **HTML5** – Semantic markup for structure and accessibility
+- **CSS3** – Flexbox, grid, gradients, animations, hover effects, and responsive design
+- **JavaScript (ES6+)** – DOM manipulation, event listeners, dynamic card creation, filtering
+- **Unsplash Images** – Free high-quality placeholder images for users
+## 🛠️ How to Run Locally
+
+1. Clone the repo:
+
+```bash
+git clone https://github.com/anjumhere/Core-Javascript-Projects-.git
+Navigate to project folder:
+
+cd user-search-filter-cards
+Open index.html in your browser:
+
+open index.html
+Type in the search input to dynamically filter users.
+
+🌟 Author
+Adnan Anjum
+GitHub: @anjumhere
+## 🌐 Live Demo
+**[View Live Demo →](https://anjumhere.github.io/Core-Javascript-Projects-/user-search-filter-cards/)**
+
 
 More projects will be added regularly. Star this repo to stay updated! ⭐
 
