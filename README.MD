@@ -7,21 +7,16 @@ A comprehensive collection of vanilla JavaScript projects demonstrating modern w
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 ![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 
-## 📋 Projects List
+## 📋 Table of Contents
 
-- [Dynamic Profile Card Generator](https://github.com/anjumhere/Core-Javascript-Projects-/tree/b988ff073e7b2587ac04f1e6dc6a1e4f4e45341e/Email-and-Password-Validation)
-- [Email and Password Validator](https://github.com/anjumhere/Core-Javascript-Projects-/tree/main/form%20validation)
-- [Getting Started](#getting-started)
-- [Project Structure](#project-structure)
-- [Technologies Used](#technologies-used)
-- [Learning Objectives](#learning-objectives)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [Roadmap](#roadmap)
-- [License](#license)
-- [Author](#author)
-- [Support](#support)
+- [Overview](#-overview)
+- [Projects](#-projects)
+- [Getting Started](#-getting-started)
+- [Technologies Used](#-technologies-used)
+- [Learning Objectives](#-learning-objectives)
+- [Contributing](#-contributing)
+- [License](#-license)
+- [Author](#-author)
 
 ## 🌟 Overview
 
@@ -34,32 +29,9 @@ This repository serves as a portfolio of vanilla JavaScript projects built to ma
 - 🎯 **Skill Development** - Practice DOM manipulation, event handling, and modern ES6+ features
 - 🔧 **Code Reference** - Reusable components and patterns for future projects
 
-### Target Audience
-
-- JavaScript beginners looking to understand core concepts
-- Developers building their portfolio
-- Students learning web development
-- Anyone interested in vanilla JavaScript implementations
-
 ## 📁 Projects
 
-This repository contains multiple mini-projects, each focusing on different JavaScript concepts and techniques. Below is the complete list of projects:
-
-### 1️⃣ ProfilePop
-
-**Dynamic Profile Card Generator**
-
-- 🎴 Create beautiful profile cards with animations
-- ✨ Glassmorphism design with gradient effects
-- 📱 Fully responsive layout
-- 🎯 Form validation and dynamic DOM manipulation
-
-**Tech Stack:** HTML5, CSS3, Vanilla JavaScript  
-**Key Concepts:** Event Listeners, DOM Creation, Form Handling
-
-[View Project](https://github.com/anjumhere/Core-Javascript-Projects-/tree/main/Email-and-Password-Validation) | [Live Demo](https://anjumhere.github.io/Core-Javascript-Projects-/Dynamic-Profile-Card-Generator/index.html) | [Documentation](./profilepop/README.md)
-
-### 2️⃣ [Email and Password Validator](https://github.com/anjumhere/Core-Javascript-Projects-/tree/main/Email-and-Password-Validation)
+### 1️⃣ Email and Password Validator
 
 **Real-time form validation with instant feedback and professional dark theme UI**
 
@@ -73,33 +45,46 @@ A production-ready authentication form validator that provides real-time feedbac
 - 🎨 Professional dark theme - Modern, eye-friendly interface
 - 📱 Fully responsive design - Perfect on all devices
 - ✅ Visual feedback system - Color-coded borders and success/error messages
-- 🔄 Auto-reset functionality - Clears form after successful submission
-- ♿ Accessible and semantic HTML
 
-**Technologies Used:**
+**Technologies:**
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)
 
-**Validation Features:**
-
-- Email format verification with custom regex
-- Password strength: 8+ chars, letters, numbers, special characters
-- Password confirmation matching
-- Empty field detection
-- Real-time requirement checklist
-
 [View Project](https://github.com/anjumhere/Core-Javascript-Projects-/tree/main/Email-and-Password-Validation) | [Live Demo](https://anjumhere.github.io/Core-Javascript-Projects-/Email-and-Password-Validation/) | [Documentation](https://github.com/anjumhere/Core-Javascript-Projects-/blob/main/Email-and-Password-Validation/README.MD)
 
-### 3️⃣ [Project Name]
+---
 
-**Coming Soon**
+### 2️⃣ Theme Toggle with localStorage
 
-- Brief description
-- Key features
-- Technologies used
+**Intelligent dark/light mode switcher with OS theme detection and persistent preferences**
 
-[View Project](#) | [Live Demo](#) | [Documentation](#)
+A sophisticated theme switching system that automatically detects your operating system's theme preference and allows manual customization. Built with vanilla JavaScript, it demonstrates modern browser APIs and user preference management.
+
+**Key Features:**
+
+- 🌓 **Automatic OS Theme Detection** - Detects and applies system dark/light mode
+- 💾 **Persistent Storage** - Saves user preferences using localStorage
+- 🔄 **Real-time Sync** - Updates when OS theme changes
+- 🎯 **Smart Preference Management** - User choice overrides system settings
+- 🎨 **Smooth Transitions** - Professional CSS animations (0.4s)
+- ⚡ **Lightweight** - Only ~2.5KB total bundle size
+- 📱 **Fully Responsive** - Works on all devices
+
+**Technical Highlights:**
+
+- `window.matchMedia()` API for OS theme detection
+- `prefers-color-scheme` media query
+- Event listener lifecycle management
+- localStorage API for data persistence
+- Clean class-based theme toggling
+
+**Technologies:**
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)
+
+[View Project](https://github.com/anjumhere/Core-Javascript-Projects-/tree/main/Theme-toggle-with-localStorage) | [Live Demo](https://anjumhere.github.io/Core-Javascript-Projects-/Theme-toggle-with-localStorage/)
 
 ---
 
@@ -109,7 +94,7 @@ _More projects will be added regularly. Star this repo to stay updated! ⭐_
 
 ### Prerequisites
 
-- A modern web browser (Chrome, Firefox, Safari, or Edge)
+- A modern web browser (Chrome 76+, Firefox 67+, Safari 12.1+, or Edge 79+)
 - Basic understanding of HTML, CSS, and JavaScript
 - A code editor (VS Code recommended)
 - Git installed on your machine
@@ -119,169 +104,23 @@ _More projects will be added regularly. Star this repo to stay updated! ⭐_
 1. **Clone the repository**
 
 ```bash
-git clone https://github.com/adnananjum/core-js-projects.git
-cd core-js-projects
+git clone https://github.com/anjumhere/Core-Javascript-Projects-.git
+cd Core-Javascript-Projects-
 ```
 
 2. **Navigate to any project**
 
 ```bash
-cd profilepop
+# For Theme Toggle
+cd Theme-toggle-with-localStorage
+
+# For Email Validator
+cd Email-and-Password-Validation
 ```
 
 3. **Open in browser**
 
-```bash
-# Simply open index.html in your browser
-# Or use Live Server extension in VS Code
-```
-
-### Alternative: Download Specific Project
-
-If you only want one project:
-
-```bash
-# Clone the repo
-git clone https://github.com/adnananjum/core-js-projects.git
-
-# Navigate to specific project
-cd core-js-projects/profilepop
-
-# Open index.html
-```
-
-## 📂 Project Structure
-
-```
-core-js-projects/
-│
-├── README.md                 # Main repository documentation
-├── LICENSE                   # MIT License file
-│
-├── profilepop/              # Project 1: ProfilePop
-│   ├── index.html
-│   ├── index.js
-│   ├── styles.css
-│   └── README.md
-│
-├── project-2/               # Project 2
-│   ├── index.html
-│   ├── script.js
-│   ├── style.css
-│   └── README.md
-│
-├── project-3/               # Project 3
-│   ├── index.html
-│   ├── script.js
-│   ├── style.css
-│   └── README.md
-│
-└── assets/                  # Shared resources (optional)
-    ├── images/
-    └── docs/
-```
-
-### Standard Project Structure
-
-Each project follows this consistent structure:
-
-```
-project-name/
-├── index.html          # Main HTML file
-├── script.js           # JavaScript logic
-├── style.css           # CSS styling
-├── README.md           # Project-specific documentation
-└── assets/             # Project-specific assets (if any)
-```
-
-## 🛠️ Technologies Used
-
-### Core Technologies
-
-- **HTML5** - Semantic markup and structure
-- **CSS3** - Modern styling and animations
-- **JavaScript (ES6+)** - Vanilla JavaScript without frameworks
-
-### CSS Techniques
-
-- Flexbox & Grid Layout
-- CSS Animations & Transitions
-- Custom Properties (Variables)
-- Responsive Design
-- Glassmorphism & Modern Effects
-
-### JavaScript Concepts
-
-- DOM Manipulation
-- Event Handling
-- ES6+ Features (Arrow Functions, Template Literals, Destructuring)
-- Array Methods (forEach, map, filter, reduce)
-- Asynchronous JavaScript (Promises, Async/Await)
-- Local Storage
-- Form Validation
-- Dynamic Content Generation
-
-## 🎓 Learning Objectives
-
-By exploring these projects, you'll learn:
-
-### JavaScript Fundamentals
-
-- ✅ DOM Manipulation and Traversal
-- ✅ Event Listeners and Event Delegation
-- ✅ Creating and Appending Elements Dynamically
-- ✅ Form Handling and Validation
-- ✅ Data Storage (localStorage, sessionStorage)
-- ✅ ES6+ Syntax and Features
-
-### CSS Skills
-
-- ✅ Responsive Design Principles
-- ✅ Modern CSS Techniques (Grid, Flexbox)
-- ✅ Animations and Transitions
-- ✅ Glassmorphism and Modern UI Effects
-- ✅ Mobile-First Approach
-
-### Best Practices
-
-- ✅ Clean and Readable Code
-- ✅ Semantic HTML
-- ✅ Separation of Concerns
-- ✅ Performance Optimization
-- ✅ Accessibility Considerations
-- ✅ Cross-Browser Compatibility
-
-## 💻 Installation
-
-### Method 1: Clone Entire Repository
-
-```bash
-# Clone the repository
-git clone https://github.com/adnananjum/core-js-projects.git
-
-# Navigate to the directory
-cd core-js-projects
-
-# Open any project
-cd profilepop
-```
-
-### Method 2: Fork the Repository
-
-1. Click the "Fork" button at the top right of this page
-2. Clone your forked repository
-
-```bash
-git clone https://github.com/YOUR-USERNAME/core-js-projects.git
-```
-
-### Method 3: Download ZIP
-
-1. Click the green "Code" button
-2. Select "Download ZIP"
-3. Extract and open any project folder
-
-## 📖 Usage
+Simply open `index.html` in your browser, or use Live Server extension in VS Code for hot reload.
 
 ### Running Projects Locally
 
@@ -298,38 +137,67 @@ git clone https://github.com/YOUR-USERNAME/core-js-projects.git
 3. Select "Open with Live Server"
 4. Project opens with hot reload capability
 
-#### Option 3: Using Python Server
+## 🛠️ Technologies Used
 
-```bash
-# Navigate to project folder
-cd profilepop
+### Core Technologies
 
-# Python 3
-python -m http.server 8000
+- **HTML5** - Semantic markup and structure
+- **CSS3** - Modern styling and animations
+- **JavaScript (ES6+)** - Vanilla JavaScript without frameworks
 
-# Python 2
-python -m SimpleHTTPServer 8000
+### JavaScript Concepts Demonstrated
 
-# Open browser to localhost:8000
-```
+- DOM Manipulation
+- Event Handling & Event Listeners
+- ES6+ Features (Arrow Functions, Template Literals)
+- Browser APIs (localStorage, matchMedia)
+- Form Validation
+- Real-time Input Processing
+- Dynamic Content Generation
+- State Management
+- Event Listener Lifecycle Management
 
-### Exploring the Code
+### CSS Techniques
 
-1. **Start with HTML** - Understand the structure
-2. **Review JavaScript** - See how functionality is implemented
-3. **Examine CSS** - Learn styling techniques
-4. **Modify and Experiment** - Make changes and see results
+- Flexbox Layout
+- CSS Transitions & Animations
+- Custom Properties (CSS Variables)
+- Responsive Design
+- Mobile-First Approach
+- Modern UI Effects
 
-### Learning Path Recommendation
+## 🎓 Learning Objectives
 
-```
-1. Start with simpler projects
-2. Read the project README.md
-3. Run the project and interact with it
-4. Examine the code structure
-5. Try modifying features
-6. Build something similar from scratch
-```
+By exploring these projects, you'll learn:
+
+### JavaScript Fundamentals
+
+- ✅ DOM Manipulation and Traversal
+- ✅ Event Listeners and Event Delegation
+- ✅ Browser Storage APIs (localStorage)
+- ✅ Media Query API (matchMedia)
+- ✅ Form Handling and Validation
+- ✅ Real-time Input Processing
+- ✅ ES6+ Syntax and Features
+- ✅ State Management Patterns
+
+### CSS Skills
+
+- ✅ Responsive Design Principles
+- ✅ Modern CSS Techniques (Flexbox)
+- ✅ Smooth Animations and Transitions
+- ✅ Theme Switching Implementation
+- ✅ Mobile-First Approach
+
+### Best Practices
+
+- ✅ Clean and Readable Code
+- ✅ Semantic HTML Structure
+- ✅ Separation of Concerns
+- ✅ Memory Management (Event Listener Cleanup)
+- ✅ Browser Compatibility
+- ✅ User Preference Respect
+- ✅ Performance Optimization
 
 ## 🤝 Contributing
 
@@ -372,52 +240,14 @@ Contributions, issues, and feature requests are welcome!
 - Ensure responsive design
 - Test for cross-browser compatibility
 
-#### Pull Request Process
-
-- Update the main README.md with your project
-- Add proper documentation
-- Include screenshots or demo links
-- Describe what your project does
-- List technologies and concepts used
-
-## 🗺️ Roadmap
-
-### Current Status
-
-- ✅ ProfilePop - Dynamic Profile Card Generator
-- 🔄 Project 2 - In Development
-- 📋 Project 3 - Planned
-
-### Upcoming Projects
-
-- [ ] Todo List with Local Storage
-- [ ] Weather App with API Integration
-- [ ] Quiz Application
-- [ ] Calculator with Advanced Functions
-- [ ] Image Gallery with Filters
-- [ ] Expense Tracker
-- [ ] Music Player
-- [ ] Movie Search App
-- [ ] Form Validator
-- [ ] Typing Speed Test
-
-### Future Enhancements
-
-- [ ] Add live demo links for all projects
-- [ ] Create video tutorials
-- [ ] Add difficulty ratings
-- [ ] Include code challenges
-- [ ] Add unit tests
-- [ ] Create a showcase website
-
 ## 📄 License
 
-This project is licensed under the MIT License - see below for details:
+This project is licensed under the **MIT License**.
 
 ```
 MIT License
 
-Copyright (c) 2026 Adnan Anjum
+Copyright (c) 2025 Anjum
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -440,13 +270,10 @@ SOFTWARE.
 
 ## 👨‍💻 Author
 
-**Adnan Anjum**
+**Anjum**
 
-- 🌐 Portfolio: [adnananjum.dev](https://adnananjum.dev)
-- 💼 LinkedIn: [Adnan Anjum](https://linkedin.com/in/adnananjum)
-- 🐱 GitHub: [@adnananjum](https://github.com/adnananjum)
-- 📧 Email: contact@adnananjum.dev
-- 🐦 Twitter: [@adnananjum](https://twitter.com/adnananjum)
+- 🐱 GitHub: [@anjumhere](https://github.com/anjumhere)
+- 📧 Email: anjum@example.com
 
 ### About Me
 
@@ -457,9 +284,8 @@ Passionate web developer focused on creating practical, educational, and well-do
 ### Need Help?
 
 - 📖 Check individual project README files
-- 💡 Open an [issue](https://github.com/adnananjum/core-js-projects/issues)
-- 💬 Start a [discussion](https://github.com/adnananjum/core-js-projects/discussions)
-- 📧 Email me at contact@adnananjum.dev
+- 💡 Open an [issue](https://github.com/anjumhere/Core-Javascript-Projects-/issues)
+- 📧 Contact me via email
 
 ### Found This Helpful?
 
@@ -476,44 +302,18 @@ Passionate web developer focused on creating practical, educational, and well-do
 - **Stack Overflow Community** - Problem-solving support
 - **GitHub Community** - Inspiration and collaboration
 
-## 📊 Repository Stats
-
-- **Total Projects**: Growing collection
-- **Languages**: JavaScript, HTML, CSS
-- **Difficulty**: Beginner to Intermediate
-- **License**: MIT (Free to use and modify)
-- **Maintained**: Active development
-
-## 🔗 Useful Links
-
-### Learning Resources
+## 🔗 Useful Learning Resources
 
 - [MDN JavaScript Guide](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide)
 - [JavaScript.info](https://javascript.info/)
-- [Eloquent JavaScript](https://eloquentjavascript.net/)
-- [You Don't Know JS](https://github.com/getify/You-Dont-Know-JS)
+- [Can I Use](https://caniuse.com/) - Browser compatibility checker
+- [CSS Tricks](https://css-tricks.com/) - CSS reference and tutorials
 
-### Tools & References
-
-- [Can I Use](https://caniuse.com/) - Browser compatibility
-- [CSS Tricks](https://css-tricks.com/) - CSS reference
-- [Web.dev](https://web.dev/) - Modern web development
-- [JavaScript30](https://javascript30.com/) - 30 Day Challenge
-
-## 📈 Project Status
+## 📊 Repository Stats
 
 ![Maintained](https://img.shields.io/badge/Maintained-Yes-brightgreen)
 ![Projects](https://img.shields.io/badge/Projects-Growing-blue)
 ![Contributions](https://img.shields.io/badge/Contributions-Welcome-orange)
-
-## 🎯 Goals
-
-- Build 20+ JavaScript projects
-- Cover all major JavaScript concepts
-- Provide comprehensive documentation
-- Create video tutorials
-- Build an interactive showcase
-- Help others learn JavaScript
 
 ---
 
@@ -528,7 +328,7 @@ If this repository helped you, please consider:
 📢 **Sharing with others**  
 🤝 **Contributing your projects**
 
-**Made with ❤️ and ☕ by Adnan Anjum**
+**Made with ❤️ by Anjum**
 
 [⬆ back to top](#core-javascript-projects-)
 
