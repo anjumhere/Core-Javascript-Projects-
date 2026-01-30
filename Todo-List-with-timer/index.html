@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo-App</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="stats.css" />
+  </head>
+  <body>
+    <div class="main-container">
+      <h2>Tick Task</h2>
+      <div class="container">
+        <input type="text" placeholder="Enter your Text" id="todo-input" />
+        <button id="todo-button">Add</button>
+      </div>
+
+      <div class="tasks">
+        <ul id="todo-list"></ul>
+      </div>
+    </div>
+
+    <div class="stats">
+      <div class="stat-item">
+        <span class="stat-label">Total Tasks</span>
+        <span class="stat-value" id="total-tasks">0</span>
+      </div>
+      <div class="stat-item pending">
+        <span class="stat-label">Pending</span>
+        <span class="stat-value" id="todo-pend">0</span>
+      </div>
+      <div class="stat-item completed">
+        <span class="stat-label">Completed</span>
+        <span class="stat-value" id="todo-comp">0</span>
+      </div>
+      <button id="completed-btn">Clear All Tasks</button>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

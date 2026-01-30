@@ -1,0 +1,637 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* =========================
+   2. PAGE LAYOUT
+   ========================= */
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+      circle at 20% 50%,
+      rgba(120, 119, 198, 0.3),
+      transparent 50%
+    ),
+    radial-gradient(circle at 80% 80%, rgba(138, 43, 226, 0.3), transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+body > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Mobile: Stack vertically */
+@media (max-width: 768px) {
+  body {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 16px;
+  }
+
+  /* Stats appear first on mobile */
+  .stats {
+    order: 1;
+  }
+
+  /* Main container appears second */
+  .main-container {
+    order: 2;
+  }
+}
+
+/* =========================
+   3. MAIN CONTAINER
+   ========================= */
+
+.main-container {
+  width: 100%;
+  max-width: 420px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+@media (max-width: 768px) {
+  .main-container {
+    max-width: 100%;
+    padding: 20px 16px;
+    border-radius: 16px;
+    margin-bottom: 20px;
+  }
+}
+
+/* =========================
+   4. HEADER
+   ========================= */
+
+h2 {
+  text-align: center;
+  margin-bottom: 8px;
+  font-size: 1.6rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  h2 {
+    font-size: 1.4rem;
+  }
+}
+
+#todo-pend {
+  text-align: center;
+  color: #333;
+  font-size: 0.95rem;
+  margin: 4px 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 600;
+}
+#todo-comp {
+  text-align: center;
+  color: #333;
+  font-size: 0.95rem;
+  margin: 4px 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 600;
+}
+#total-tasks {
+  text-align: center;
+  color: #333;
+  font-size: 0.95rem;
+  margin: 4px 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 600;
+}
+
+/* =========================
+   5. INPUT SECTION
+   ========================= */
+
+.container {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
+
+#todo-input {
+  flex: 1;
+  padding: 12px 14px;
+  border-radius: 20px;
+  border: 2px solid rgba(102, 126, 234, 0.2);
+  font-size: 0.95rem;
+  outline: none;
+  background: rgba(255, 255, 255, 0.9);
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  #todo-input {
+    width: 100%;
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+}
+
+#todo-input:focus {
+  border-color: #667eea;
+  background: #fff;
+  box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+}
+#todo-input:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+  border-color: #667eea;
+}
+
+/* =========================
+   6. ADD BUTTON
+   ========================= */
+
+#todo-button {
+  padding: 12px 18px;
+  border-radius: 20px;
+  border: none;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  font-size: 0.9rem;
+  cursor: pointer;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  #todo-button {
+    width: 100%;
+    padding: 14px 20px;
+    font-size: 1rem;
+  }
+}
+
+#todo-button:hover {
+  background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+}
+
+#todo-button:active {
+  transform: scale(0.98);
+}
+
+/* =========================
+   7. TODO LIST
+   ========================= */
+
+ul {
+  list-style: none;
+}
+
+/* =========================
+   8. TODO ITEM
+   ========================= */
+
+li {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 10px;
+  border-radius: 12px;
+  margin-bottom: 8px;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(5px);
+  position: relative;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(102, 126, 234, 0.1);
+}
+
+li:hover {
+  background: rgba(255, 255, 255, 0.9);
+  transform: translateX(5px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.15);
+}
+
+@media (max-width: 768px) {
+  li {
+    padding: 12px;
+  }
+
+  li:hover {
+    transform: none;
+  }
+}
+
+.lists {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 8px;
+}
+
+.todo-main-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* =========================
+   9. CHECKBOX
+   ========================= */
+
+li input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 22px;
+  height: 22px;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s ease;
+  background: #fff;
+}
+
+li input[type="checkbox"]:hover {
+  border-color: #667eea;
+  transform: scale(1.05);
+  box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+}
+
+li input[type="checkbox"]:checked {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-color: #667eea;
+}
+
+li input[type="checkbox"]:checked::after {
+  content: "✓";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* =========================
+   10. TODO TEXT
+   ========================= */
+
+.todo-text {
+  flex: 1;
+  font-size: 0.95rem;
+  word-break: break-word;
+}
+
+@media (max-width: 768px) {
+  .todo-text {
+    font-size: 1rem;
+  }
+}
+
+.todo-text.completed {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+/* =========================
+   11. BUTTONS
+   ========================= */
+
+li button {
+  padding: 6px 10px;
+  border-radius: 12px;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 0.8rem;
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  li button {
+    padding: 8px 12px;
+    font-size: 0.85rem;
+    min-width: 70px;
+  }
+}
+
+.delete-button {
+  background: #ff5a5a;
+}
+
+.delete-button:hover {
+  background: #e04747;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+}
+
+.delete-button:active {
+  transform: scale(0.95);
+}
+
+.edit-button {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.edit-button:hover {
+  background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(102, 126, 234, 0.4);
+}
+
+.edit-button:active {
+  transform: scale(0.95);
+}
+
+/* =========================
+   12. TIMER SECTION
+   ========================= */
+
+.timer-section {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px;
+  background: #fff;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .timer-section {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+}
+
+.timer-input {
+  width: 50px;
+  padding: 4px 6px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .timer-input {
+    width: 60px;
+    padding: 6px 8px;
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+}
+
+.timer-display {
+  font-family: monospace;
+  font-weight: bold;
+  color: #333;
+  min-width: 60px;
+}
+
+@media (max-width: 768px) {
+  .timer-display {
+    font-size: 1rem;
+  }
+}
+
+.timer-display.running {
+  color: #667eea;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.timer-display.finished {
+  color: #22c55e;
+}
+
+.timer-btn {
+  padding: 4px 10px;
+  border-radius: 8px;
+  border: none;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  cursor: pointer;
+  font-size: 0.75rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .timer-btn {
+    padding: 8px 14px;
+    font-size: 0.85rem;
+    min-width: 60px;
+  }
+}
+
+.timer-btn:hover {
+  background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.4);
+}
+
+.timer-btn:active {
+  transform: scale(0.95);
+}
+
+.timer-btn.stop {
+  background: #ff5a5a;
+}
+
+.timer-btn.stop:hover {
+  background: #e04747;
+}
+
+/* =========================
+   13. HOVER TOOLTIP
+   ========================= */
+
+.hover-tooltip {
+  position: absolute;
+  top: 5px;
+  right: 105%;
+  background: rgba(255, 255, 255, 0.98);
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  z-index: 10;
+  min-width: 250px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+/* Desktop: Show on hover */
+@media (hover: hover) and (pointer: fine) {
+  .todo-main-row:hover ~ .hover-tooltip {
+    opacity: 1;
+  }
+}
+
+/* Mobile: Show on long press */
+@media (hover: none) and (pointer: coarse) {
+  .hover-tooltip {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    right: auto;
+    transform: translate(-50%, -50%);
+    min-width: 280px;
+    max-width: 90vw;
+    z-index: 1000;
+  }
+
+  li.show-tooltip .hover-tooltip {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* Add backdrop for mobile tooltip */
+  li.show-tooltip::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    animation: fadeIn 0.3s ease;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
+
+.tooltip-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #333;
+}
+
+.progress-bar-container {
+  width: 100%;
+  height: 20px;
+  background: #e5e7eb;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #4f7cff, #3c63d9);
+  transition: width 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+.tooltip-details {
+  font-size: 0.85rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* =========================
+   14. MOBILE OPTIMIZATION
+   ========================= */
+
+@media (max-width: 768px) {
+  .main-container {
+    padding: 18px;
+    border-radius: 16px;
+  }
+
+  h2 {
+    font-size: 1.4rem;
+  }
+
+  .todo-main-row {
+    gap: 8px;
+  }
+
+  /* Improve touch targets */
+  li input[type="checkbox"] {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+/* Edit input styling */
+.edit-input {
+  width: 100%;
+  padding: 8px 12px;
+  font-size: 0.95rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+  background-color: #fff;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+@media (max-width: 768px) {
+  .edit-input {
+    font-size: 16px; /* Prevents zoom on iOS */
+    padding: 10px 12px;
+  }
+}
+
+.edit-input:focus {
+  border-color: #4a90e2;
+  box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.15);
+}

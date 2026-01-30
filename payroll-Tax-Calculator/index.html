@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pakistani Tax Calculator 2024-25</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>🇵🇰 Pakistani Tax Calculator</h1>
+        <p>Custom Tax Slabs | Accurate & Easy to Use</p>
+      </header>
+
+      <div class="card">
+        <div class="tabs">
+          <button class="tab active" onclick="switchTab('salary')">
+            Salary Tax
+          </button>
+          <button class="tab" onclick="switchTab('business')">
+            Business Income
+          </button>
+          <button class="tab" onclick="switchTab('compare')">
+            Tax Comparison
+          </button>
+          <button class="tab" onclick="switchTab('slabs')">Tax Slabs</button>
+        </div>
+
+        <!-- Salary Tax Calculator -->
+        <div id="salary" class="tab-content active">
+          <div class="info-box">
+            <p>
+              <strong>Note:</strong> Tax calculated based on custom tax slabs
+              from your formula
+            </p>
+          </div>
+
+          <div class="form-group">
+            <label>Annual Salary (PKR)</label>
+            <input
+              type="number"
+              id="annualSalary"
+              placeholder="e.g., 1200000"
+            />
+          </div>
+
+          <div class="form-group">
+            <label>Calculation Type</label>
+            <select id="salaryType">
+              <option value="annual">Annual Tax</option>
+              <option value="monthly">Monthly Tax</option>
+            </select>
+          </div>
+
+          <button class="btn" onclick="calculateSalaryTax()">
+            Calculate Tax
+          </button>
+
+          <div id="salaryResult" class="result-box"></div>
+        </div>
+
+        <!-- Business Income Calculator -->
+        <div id="business" class="tab-content">
+          <div class="info-box">
+            <p><strong>Business Tax:</strong> Same progressive rates apply</p>
+          </div>
+
+          <div class="form-group">
+            <label>Annual Business Income (PKR)</label>
+            <input
+              type="number"
+              id="businessIncome"
+              placeholder="e.g., 5000000"
+            />
+          </div>
+
+          <button class="btn" onclick="calculateBusinessTax()">
+            Calculate Tax
+          </button>
+
+          <div id="businessResult" class="result-box"></div>
+        </div>
+
+        <!-- Tax Comparison -->
+        <div id="compare" class="tab-content">
+          <div class="info-box">
+            <p>
+              <strong>Compare:</strong> See how tax changes with different
+              income levels
+            </p>
+          </div>
+
+          <div class="form-group">
+            <label>Starting Income (PKR)</label>
+            <input
+              type="number"
+              id="startIncome"
+              placeholder="e.g., 600000"
+              value="600000"
+            />
+          </div>
+
+          <div class="form-group">
+            <label>Ending Income (PKR)</label>
+            <input
+              type="number"
+              id="endIncome"
+              placeholder="e.g., 5000000"
+              value="5000000"
+            />
+          </div>
+
+          <div class="form-group">
+            <label>Income Step (PKR)</label>
+            <input
+              type="number"
+              id="stepIncome"
+              placeholder="e.g., 500000"
+              value="500000"
+            />
+          </div>
+
+          <button class="btn" onclick="compareIncome()">
+            Compare Tax Brackets
+          </button>
+
+          <div id="compareResult" class="result-box"></div>
+        </div>
+
+        <!-- Tax Slabs Information -->
+        <div id="slabs" class="tab-content">
+          <div class="tax-slabs">
+            <h3>Custom Tax Slabs (From Your Formula)</h3>
+
+            <div class="slab-item">
+              <strong>Up to PKR 600,000:</strong> 0% (No Tax)
+            </div>
+            <div class="slab-item">
+              <strong>PKR 600,001 - 1,200,000:</strong> 1% of amount exceeding
+              PKR 600,000 <br /><small>Fixed Tax: PKR 0</small>
+            </div>
+            <div class="slab-item">
+              <strong>PKR 1,200,001 - 2,200,000:</strong> 11% of amount
+              exceeding PKR 1,200,000 <br /><small>Fixed Tax: PKR 6,000</small>
+            </div>
+            <div class="slab-item">
+              <strong>PKR 2,200,001 - 3,200,000:</strong> 23% of amount
+              exceeding PKR 2,200,000 <br /><small
+                >Fixed Tax: PKR 116,000</small
+              >
+            </div>
+            <div class="slab-item">
+              <strong>PKR 3,200,001 - 4,100,000:</strong> 30% of amount
+              exceeding PKR 3,200,000 <br /><small
+                >Fixed Tax: PKR 346,000</small
+              >
+            </div>
+            <div class="slab-item">
+              <strong>Above PKR 4,100,000:</strong> 35% of amount exceeding PKR
+              4,100,000 <br /><small>Fixed Tax: PKR 616,000</small>
+            </div>
+
+            <div class="formula-box">
+              <strong>Tax Calculation Summary:</strong><br /><br />
+              <table style="width: 100%; border-collapse: collapse">
+                <tr style="background: rgba(0, 0, 0, 0.05)">
+                  <th
+                    style="
+                      padding: 8px;
+                      text-align: left;
+                      border-bottom: 2px solid #ddd;
+                    "
+                  >
+                    Income Range (PKR)
+                  </th>
+                  <th
+                    style="
+                      padding: 8px;
+                      text-align: center;
+                      border-bottom: 2px solid #ddd;
+                    "
+                  >
+                    Rate
+                  </th>
+                  <th
+                    style="
+                      padding: 8px;
+                      text-align: right;
+                      border-bottom: 2px solid #ddd;
+                    "
+                  >
+                    Fixed Tax
+                  </th>
+                </tr>
+                <tr>
+                  <td style="padding: 8px; border-bottom: 1px solid #eee">
+                    0 - 600,000
+                  </td>
+                  <td
+                    style="
+                      padding: 8px;
+                      text-align: center;
+                      border-bottom: 1px solid #eee;
+                    "
+                  >
+                    0%
+                  </td>
+                  <td
+                    style="
+                      padding: 8px;
+                      text-align: right;
+                      border-bottom: 1px solid #eee;
+                    "
+                  >
+                    PKR 0
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding: 8px; border-bottom: 1px solid #eee">
+                    600,001 - 1,200,000
+                  </td>
+                  <td
+                    style="
+                      padding: 8px;
+                      text-align: center;
+                      border-bottom: 1px solid #eee;
+                    "
+                  >
+                    1%
+                  </td>
+                  <td
+                    style="
+                      padding: 8px;
+                      text-align: right;
+                      border-bottom: 1px solid #eee;
+                    "
+                  >
+                    PKR 0
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding: 8px; border-bottom: 1px solid #eee">
+                    1,200,001 - 2,200,000
+                  </td>
+                  <td
+                    style="
+                      padding: 8px;
+                      text-align: center;
+                      border-bottom: 1px solid #eee;
+                    "
+                  >
+                    11%
+                  </td>
+                  <td
+                    style="
+                      padding: 8px;
+                      text-align: right;
+                      border-bottom: 1px solid #eee;
+                    "
+                  >
+                    PKR 6,000
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding: 8px; border-bottom: 1px solid #eee">
+                    2,200,001 - 3,200,000
+                  </td>
+                  <td
+                    style="
+                      padding: 8px;
+                      text-align: center;
+                      border-bottom: 1px solid #eee;
+                    "
+                  >
+                    23%
+                  </td>
+                  <td
+                    style="
+                      padding: 8px;
+                      text-align: right;
+                      border-bottom: 1px solid #eee;
+                    "
+                  >
+                    PKR 116,000
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding: 8px; border-bottom: 1px solid #eee">
+                    3,200,001 - 4,100,000
+                  </td>
+                  <td
+                    style="
+                      padding: 8px;
+                      text-align: center;
+                      border-bottom: 1px solid #eee;
+                    "
+                  >
+                    30%
+                  </td>
+                  <td
+                    style="
+                      padding: 8px;
+                      text-align: right;
+                      border-bottom: 1px solid #eee;
+                    "
+                  >
+                    PKR 346,000
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding: 8px">Above 4,100,000</td>
+                  <td style="padding: 8px; text-align: center">35%</td>
+                  <td style="padding: 8px; text-align: right">PKR 616,000</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>

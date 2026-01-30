@@ -1,0 +1,103 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Container stays the same layout */
+.container {
+  border-radius: 50px;
+  width: 330px;
+  height: 550px;
+  margin: 100px auto;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  background-color: #1c1c1e; /* iPhone dark background */
+  border: none; /* remove the red border */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Row stays the same */
+.row {
+  display: flex;
+}
+
+/* Display styling */
+.display {
+  height: 90px;
+  width: 300px;
+  margin: 100px 0 20px 0;
+  font-size: 30px;
+  text-align: right;
+  padding: 10px;
+  border-radius: 20px;
+  background-color: #1c1c1e; /* iPhone dark display */
+  color: white;
+  border: none;
+}
+
+/* List icon stays similar */
+#list {
+  position: relative;
+  top: 30px;
+  right: 130px;
+  color: orange;
+  height: 4px;
+}
+
+/* Buttons */
+.btn {
+  width: 60px;
+  height: 60px;
+  font-size: 20px;
+  cursor: pointer;
+  margin: 3px;
+  border-radius: 30px;
+  border: none;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s, transform 0.1s;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  background-color: #333333; /* default button dark gray */
+  color: white;
+}
+
+/* Operator buttons (+, -, *, /) — keep your layout */
+.btn:nth-child(4),
+.row:nth-child(2) .btn:nth-child(4),
+.row:nth-child(3) .btn:nth-child(4),
+.row:nth-child(4) .btn:nth-child(4) {
+  background-color: #ff9f0a; /* iPhone orange operators */
+  color: white;
+}
+
+/* Special buttons: C, +/-, % */
+.row:nth-child(2) .btn:nth-child(-n + 3) {
+  background-color: #a5a5a5; /* light gray */
+  color: black;
+}
+
+/* Zero button (double width) */
+.row:last-child .btn:nth-child(2) {
+  flex: 2;
+  border-radius: 30px;
+}
+
+/* Decimal and equal buttons keep round shape */
+.row:last-child .btn:nth-child(3),
+.row:last-child .btn:nth-child(4) {
+  border-radius: 30px;
+}
+
+/* Press effect */
+.btn:active {
+  transform: scale(0.95);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+body {
+  background-color: #1c1c1e;
+}
