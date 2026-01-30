@@ -119,9 +119,133 @@ A sophisticated theme switching system that automatically detects your operating
 
 [View Project](https://github.com/anjumhere/Core-Javascript-Projects-/tree/main/Theme-toggle-with-localStorage) | [Live Demo](https://anjumhere.github.io/Core-Javascript-Projects-/Theme-toggle-with-localStorage/)
 
----
+ 4️⃣ A Simple Even/Odd Validator
 
-_More projects will be added regularly. Star this repo to stay updated! ⭐_
+Simple even and odd number checker using vanilla JavaScript, HTML, and CSS
+
+A project to validate if a number is even or odd in real-time, with clean UI and instant feedback.
+
+Key Features:
+
+🔢 Real-time number validation
+
+🎨 Simple, clean UI
+
+⚡ Instant feedback
+
+Technologies: HTML, CSS, JavaScript
+
+View Project | Live Demo
+
+5️⃣ Rock-Paper-Scissors
+
+Classic Rock-Paper-Scissors game built with vanilla JavaScript
+
+Interactive game with dynamic score tracking and animations.
+
+Key Features:
+
+✊ Dynamic game logic
+
+🎯 Score tracking
+
+🎨 Visual feedback for player and computer choices
+
+Technologies: HTML, CSS, JavaScript
+
+View Project | Live Demo
+
+6️⃣ Calculator
+
+A basic calculator for arithmetic operations using vanilla JavaScript
+
+Perform addition, subtraction, multiplication, and division with live input.
+
+Key Features:
+
+🔢 Basic arithmetic operations
+
+🎨 Responsive UI
+
+⚡ Instant calculation results
+
+Technologies: HTML, CSS, JavaScript
+
+View Project | Live Demo
+
+7️⃣ Payroll Tax Calculator
+
+A simple payroll tax calculator built with JavaScript
+
+Calculate salary, tax deductions, and net pay dynamically.
+
+Key Features:
+
+💰 Income and tax calculation
+
+📊 Instant results
+
+🎨 Clean UI
+
+Technologies: HTML, CSS, JavaScript
+
+View Project | Live Demo
+
+8️⃣ Random Password Generator
+
+Generate strong random passwords with user-selected criteria
+
+Customize password length and complexity.
+
+Key Features:
+
+🔐 Random password generation
+
+⚙️ Customizable length and symbols
+
+🎨 Simple and clean interface
+
+Technologies: HTML, CSS, JavaScript
+
+View Project | Live Demo
+
+9️⃣ Todo List with Timer
+
+Interactive todo list with countdown timer for tasks
+
+Keep track of tasks and manage time effectively.
+
+Key Features:
+
+✅ Add and remove tasks
+
+⏱ Timer for task focus
+
+🎨 Responsive interface
+
+Technologies: HTML, CSS, JavaScript
+
+View Project | Live Demo
+
+10️⃣ Weather Web App
+
+Simple weather application fetching real-time data from an API
+
+Check the current weather of any city with dynamic UI updates.
+
+Key Features:
+
+🌦 Fetch weather data via API
+
+📍 Search for cities
+
+🎨 Dynamic UI updates
+
+Technologies: HTML, CSS, JavaScript
+
+View Project | Live Demo
+
+More projects will be added regularly. Star this repo to stay updated! ⭐
 
 ## 🚀 Getting Started
 
