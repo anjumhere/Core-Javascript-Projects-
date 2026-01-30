@@ -31,7 +31,40 @@ This repository serves as a portfolio of vanilla JavaScript projects built to ma
 
 ## 📁 Projects
 
-### 1️⃣ Email and Password Validator
+### 1️⃣ ProfilePop - Dynamic Profile Card Generator
+
+**Modern profile card generator with stunning animations and glassmorphism effects**
+
+A dynamic profile card generator that creates visually stunning profile cards with custom information. Built with vanilla JavaScript and modern CSS techniques, featuring a beautiful dark theme with purple gradients, glassmorphism effects, and smooth animations.
+
+**Key Features:**
+
+- 🎨 **Glassmorphism Design** - Modern frosted glass effect with backdrop blur
+- ✨ **Gradient Themes** - Beautiful purple and blue gradient color schemes
+- 🎯 **Animated Borders** - Rotating gradient borders on profile pictures
+- 🚀 **Dynamic Card Generation** - Create unlimited profile cards on the fly
+- 💫 **Popup Animation** - Cards appear with an eye-catching bubble/pop effect
+- 📱 **Fully Responsive** - Mobile-first approach with intelligent layout
+- 🎨 **Form Validation** - Built-in HTML5 validation for data integrity
+- 🔄 **Auto-Reset** - Form automatically clears after submission
+
+**Use Cases:**
+- Team member showcases
+- Portfolio websites
+- Employee directories
+- Social media profile displays
+- Event attendee lists
+
+**Technologies:**
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)
+
+[View Project](https://github.com/anjumhere/Core-Javascript-Projects-/tree/main/Dynamic-Profile-Card-Generator) | [Live Demo](https://anjumhere.github.io/Core-Javascript-Projects-/Dynamic-Profile-Card-Generator/index.html)
+
+---
+
+### 2️⃣ Email and Password Validator
 
 **Real-time form validation with instant feedback and professional dark theme UI**
 
@@ -55,7 +88,7 @@ A production-ready authentication form validator that provides real-time feedbac
 
 ---
 
-### 2️⃣ Theme Toggle with localStorage
+### 3️⃣ Theme Toggle with localStorage
 
 **Intelligent dark/light mode switcher with OS theme detection and persistent preferences**
 
@@ -111,11 +144,14 @@ cd Core-Javascript-Projects-
 2. **Navigate to any project**
 
 ```bash
-# For Theme Toggle
-cd Theme-toggle-with-localStorage
+# For ProfilePop
+cd Dynamic-Profile-Card-Generator
 
 # For Email Validator
 cd Email-and-Password-Validation
+
+# For Theme Toggle
+cd Theme-toggle-with-localStorage
 ```
 
 3. **Open in browser**
@@ -147,24 +183,27 @@ Simply open `index.html` in your browser, or use Live Server extension in VS Cod
 
 ### JavaScript Concepts Demonstrated
 
-- DOM Manipulation
+- DOM Manipulation & Element Creation
 - Event Handling & Event Listeners
 - ES6+ Features (Arrow Functions, Template Literals)
 - Browser APIs (localStorage, matchMedia)
-- Form Validation
+- Form Validation & Handling
 - Real-time Input Processing
 - Dynamic Content Generation
 - State Management
 - Event Listener Lifecycle Management
+- Array Methods & Iteration
 
 ### CSS Techniques
 
-- Flexbox Layout
+- Flexbox & Grid Layout
 - CSS Transitions & Animations
 - Custom Properties (CSS Variables)
 - Responsive Design
 - Mobile-First Approach
-- Modern UI Effects
+- Glassmorphism & Modern UI Effects
+- Gradient Design
+- Backdrop Filters
 
 ## 🎓 Learning Objectives
 
@@ -173,6 +212,7 @@ By exploring these projects, you'll learn:
 ### JavaScript Fundamentals
 
 - ✅ DOM Manipulation and Traversal
+- ✅ Dynamic Element Creation & Appending
 - ✅ Event Listeners and Event Delegation
 - ✅ Browser Storage APIs (localStorage)
 - ✅ Media Query API (matchMedia)
@@ -184,9 +224,12 @@ By exploring these projects, you'll learn:
 ### CSS Skills
 
 - ✅ Responsive Design Principles
-- ✅ Modern CSS Techniques (Flexbox)
+- ✅ Modern CSS Techniques (Flexbox & Grid)
 - ✅ Smooth Animations and Transitions
+- ✅ Keyframe Animations
+- ✅ Glassmorphism Effects
 - ✅ Theme Switching Implementation
+- ✅ Gradient Design
 - ✅ Mobile-First Approach
 
 ### Best Practices
