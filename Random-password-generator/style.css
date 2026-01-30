@@ -1,0 +1,340 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Body */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  background: linear-gradient(to right bottom, #8e2929, #45c5d8);
+  color: white;
+}
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: 450px;
+  padding: 25px 30px;
+  border: 1px solid #fff;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-shadow: 8px 8px 4px #8e2929, 8px 8px 0 #45c5d8;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* Heading */
+.m-heading {
+  font-size: 2rem;
+  text-align: center;
+}
+
+/* Input box with copy icon */
+.inputbox {
+  position: relative;
+  width: 100%;
+}
+
+.passbox {
+  width: 100%;
+  padding: 12px 45px 12px 12px;
+  font-size: 20px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+}
+
+#copyIcon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 24px;
+  color: #fff;
+  transition: 0.2s;
+}
+
+#copyIcon:hover {
+  color: #ffd700;
+}
+
+/* Slider - Water Tube / Liquid Flow Style */
+.slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 20px;
+  border-radius: 30px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0.25) 50%,
+    rgba(255, 255, 255, 0.1) 100%
+  );
+  outline: none;
+  cursor: pointer;
+  position: relative;
+  border: 3px solid rgba(255, 255, 255, 0.4);
+  box-shadow: inset 0 4px 10px rgba(0, 0, 0, 0.4),
+    inset 0 -2px 6px rgba(255, 255, 255, 0.2), 0 2px 15px rgba(255, 215, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.slider:hover {
+  box-shadow: inset 0 4px 10px rgba(0, 0, 0, 0.4),
+    inset 0 -2px 6px rgba(255, 255, 255, 0.3), 0 2px 20px rgba(255, 215, 0, 0.5);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Webkit Thumb - Liquid Ball Inside Tube */
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 30% 30%,
+    #ffed4e,
+    #ffd700 40%,
+    #cc9d00 100%
+  );
+  cursor: grab;
+  position: relative;
+  border: none;
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.9), 0 0 30px rgba(255, 215, 0, 0.5),
+    inset -2px -2px 4px rgba(0, 0, 0, 0.3),
+    inset 2px 2px 4px rgba(255, 255, 255, 0.6);
+  transition: all 0.2s ease;
+}
+
+.slider::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+  box-shadow: 0 0 20px rgba(255, 215, 0, 1), 0 0 40px rgba(255, 215, 0, 0.7),
+    inset -2px -2px 4px rgba(0, 0, 0, 0.3),
+    inset 2px 2px 4px rgba(255, 255, 255, 0.7);
+}
+
+.slider::-webkit-slider-thumb:active {
+  cursor: grabbing;
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(255, 215, 0, 1), 0 0 50px rgba(255, 215, 0, 0.8),
+    inset -2px -2px 5px rgba(0, 0, 0, 0.4),
+    inset 2px 2px 5px rgba(255, 255, 255, 0.5);
+}
+
+/* Firefox Thumb */
+.slider::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: none;
+  background: radial-gradient(
+    circle at 30% 30%,
+    #ffed4e,
+    #ffd700 40%,
+    #cc9d00 100%
+  );
+  cursor: grab;
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.9), 0 0 30px rgba(255, 215, 0, 0.5),
+    inset -2px -2px 4px rgba(0, 0, 0, 0.3),
+    inset 2px 2px 4px rgba(255, 255, 255, 0.6);
+  transition: all 0.2s ease;
+}
+
+.slider::-moz-range-thumb:hover {
+  transform: scale(1.15);
+  box-shadow: 0 0 20px rgba(255, 215, 0, 1), 0 0 40px rgba(255, 215, 0, 0.7),
+    inset -2px -2px 4px rgba(0, 0, 0, 0.3),
+    inset 2px 2px 4px rgba(255, 255, 255, 0.7);
+}
+
+.slider::-moz-range-thumb:active {
+  cursor: grabbing;
+  transform: scale(1.05);
+}
+
+.slider::-moz-range-track {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0.25) 50%,
+    rgba(255, 255, 255, 0.1) 100%
+  );
+  border: none;
+  height: 20px;
+  border-radius: 30px;
+}
+#sliderValue {
+  border: 1px solid rgb(218, 214, 214);
+  outline: none;
+  width: 50px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 10px;
+}
+/* Details section - Enhanced Styling */
+.details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 15px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  backdrop-filter: blur(5px);
+}
+
+.details:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 215, 0, 0.3);
+  transform: translateX(5px);
+}
+
+/* First details section (Password Length) - Special styling */
+.details:first-of-type {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 15px 20px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  cursor: default;
+}
+
+.details:first-of-type:hover {
+  transform: none;
+}
+
+.details p,
+.details label {
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}
+
+.details:first-of-type p {
+  font-size: 16px;
+}
+
+/* Slider value badge */
+.details:first-of-type span {
+  background: linear-gradient(135deg, #ffd700, #ffed4e);
+  color: #8e2929;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 5px 15px;
+  border-radius: 8px;
+  min-width: 50px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(255, 215, 0, 0.3);
+}
+
+/* Custom checkboxes - Toggle Switch Style */
+.details input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 50px;
+  height: 26px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 13px;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.details input[type="checkbox"]::before {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: white;
+  top: 2px;
+  left: 2px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.details input[type="checkbox"]:checked {
+  background: linear-gradient(135deg, #ffd700, #ffed4e);
+  border-color: #ffd700;
+}
+
+.details input[type="checkbox"]:checked::before {
+  transform: translateX(24px);
+  background: #8e2929;
+}
+
+/* Generate button */
+.genBtn {
+  cursor: pointer;
+  padding: 14px;
+  border: 2px solid #fff;
+  border-radius: 20px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 215, 0, 0.1),
+    rgba(69, 197, 216, 0.1)
+  );
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+}
+
+.genBtn:hover {
+  background: linear-gradient(135deg, #ffd700, #45c5d8);
+  color: #8e2929;
+  box-shadow: 0 8px 20px rgba(255, 215, 0, 0.4);
+  transform: translateY(-2px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 500px) {
+  .container {
+    padding: 15px 20px;
+  }
+
+  .passbox {
+    font-size: 18px;
+    padding: 10px 40px 10px 10px;
+  }
+
+  #copyIcon {
+    font-size: 20px;
+  }
+
+  .genBtn {
+    font-size: 14px;
+    padding: 12px;
+  }
+
+  .m-heading {
+    font-size: 1.6rem;
+  }
+
+  .details {
+    padding: 10px 12px;
+  }
+
+  .details label {
+    font-size: 14px;
+  }
+}
