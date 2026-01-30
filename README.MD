@@ -246,6 +246,8 @@ Technologies: HTML, CSS, JavaScript
 View Project | Live Demo
 
  ### 1️⃣1️⃣  User Search Filter Cards
+
+[View Project](https://github.com/anjumhere/Core-Javascript-Projects-/tree/main/user-search-filter-cards) | [Live Demo](https://anjumhere.github.io/Core-Javascript-Projects-/user-search-filter-cards/)
 ## 🚀 How It Works
 
 1. **Card Creation**
@@ -304,7 +306,7 @@ Type in the search input to dynamically filter users.
 ## 🌟 Author
 ## Adnan Anjum
 ## GitHub: @anjumhere
-[View Project](https://github.com/anjumhere/Core-Javascript-Projects-/tree/main/user-search-filter-cards) | [Live Demo](https://anjumhere.github.io/Core-Javascript-Projects-/user-search-filter-cards/)
+
 
 
 _______________________________________________________________________________________________________________________________
