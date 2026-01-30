@@ -1,0 +1,179 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* Page background */
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+}
+
+/* Main container */
+.container {
+  width: 100%;
+  max-width: 380px;
+  min-height: 500px;
+  padding: 25px;
+  border-radius: 30px;
+  text-align: center;
+  color: white;
+
+  background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
+    url("images/background.jpg");
+
+  background-size: cover;
+  background-position: center;
+
+  backdrop-filter: blur(12px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+}
+
+/* Title */
+.container h2 {
+  font-size: 26px;
+  margin-bottom: 20px;
+}
+
+/* Search section */
+.search-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* Search input */
+.search {
+  width: 220px;
+  height: 40px;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  padding: 0 15px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.search::placeholder {
+  color: #777;
+}
+
+/* Button */
+.btn {
+  width: 80px;
+  height: 40px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  background: #ffffff;
+  color: #333;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+
+.btn:hover {
+  background: #4f46e5;
+  color: white;
+}
+
+/* Weather info */
+.weather-info {
+  margin-top: 35px;
+}
+
+/* Weather icon */
+.weather-icon {
+  width: 150px;
+  height: 150px;
+  margin: 15px auto;
+  display: block;
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.5));
+  animation: float 3s ease-in-out infinite;
+}
+
+/* City name */
+.city {
+  font-size: 22px;
+  margin-top: 10px;
+}
+
+/* Temperature */
+.temp {
+  font-size: 60px;
+  font-weight: bold;
+  margin: 5px 0;
+}
+
+/* Weather condition */
+.condition {
+  font-size: 18px;
+  opacity: 0.9;
+}
+
+/* Floating animation */
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* 📱 Mobile responsiveness */
+@media (max-width: 480px) {
+  .container {
+    padding: 20px;
+    border-radius: 20px;
+  }
+
+  .container h2 {
+    font-size: 22px;
+  }
+
+  .search {
+    width: 100%;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .weather-icon {
+    width: 120px;
+    height: 120px;
+  }
+
+  .temp {
+    font-size: 48px;
+  }
+}
+
+/* 📱 Very small screens */
+@media (max-width: 360px) {
+  .weather-icon {
+    width: 100px;
+    height: 100px;
+  }
+
+  .temp {
+    font-size: 42px;
+  }
+}
+
+.para {
+  text-align: right;
+  opacity: 40%;
+  font-size: 13px;
+}
