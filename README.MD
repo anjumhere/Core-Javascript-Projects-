@@ -304,8 +304,10 @@ Type in the search input to dynamically filter users.
 ## 🌟 Author
 ## Adnan Anjum
 ## GitHub: @anjumhere
-[Live Demo]( https://anjumhere.github.io/Core-Javascript-Projects-/user-search-filter-cards/)
+[Live Demo]( )
+[View Project](https://github.com/anjumhere/Core-Javascript-Projects-/tree/main/user-search-filter-cards) | [Live Demo](https://anjumhere.github.io/Core-Javascript-Projects-/user-search-filter-cards/)
 
+_______________________________________________________________________________________________________________________________
 More projects will be added regularly. Star this repo to stay updated! ⭐
 
 ### 🚀 Getting Started
