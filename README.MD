@@ -137,7 +137,7 @@ Technologies: HTML, CSS, JavaScript
 
 View Project | Live Demo
 
-###5️⃣ Rock-Paper-Scissors
+### 5️⃣ Rock-Paper-Scissors
 
 Classic Rock-Paper-Scissors game built with vanilla JavaScript
 
@@ -155,7 +155,7 @@ Technologies: HTML, CSS, JavaScript
 
 View Project | Live Demo
 
-###6️⃣ Calculator
+### 6️⃣ Calculator
 
 A basic calculator for arithmetic operations using vanilla JavaScript
 
@@ -173,7 +173,7 @@ Technologies: HTML, CSS, JavaScript
 
 View Project | Live Demo
 
-###7️⃣ Payroll Tax Calculator
+### 7️⃣ Payroll Tax Calculator
 
 A simple payroll tax calculator built with JavaScript
 
@@ -191,7 +191,7 @@ Technologies: HTML, CSS, JavaScript
 
 View Project | Live Demo
 
-###8️⃣ Random Password Generator
+### 8️⃣ Random Password Generator
 
 Generate strong random passwords with user-selected criteria
 
@@ -209,7 +209,7 @@ Technologies: HTML, CSS, JavaScript
 
 View Project | Live Demo
 
-###9️⃣ Todo List with Timer
+### 9️⃣ Todo List with Timer
 
 Interactive todo list with countdown timer for tasks
 
@@ -272,7 +272,7 @@ View Project | Live Demo
 
 ---
 
-## 📦 Project Structure
+### 📦 Project Structure
 
 user-search-filter-cards/
 │
@@ -289,7 +289,7 @@ user-search-filter-cards/
 - **Unsplash Images** – Free high-quality placeholder images for users
 ## 🛠️ How to Run Locally
 
-1. Clone the repo:
+### 1. Clone the repo:
 
 ```bash
 git clone https://github.com/anjumhere/Core-Javascript-Projects-.git
@@ -301,16 +301,14 @@ Open index.html in your browser:
 open index.html
 Type in the search input to dynamically filter users.
 
-🌟 Author
-Adnan Anjum
-GitHub: @anjumhere
-## 🌐 Live Demo
-**[View Live Demo →](https://anjumhere.github.io/Core-Javascript-Projects-/user-search-filter-cards/)**
-
+## 🌟 Author
+## Adnan Anjum
+## GitHub: @anjumhere
+[Live Demo]( https://anjumhere.github.io/Core-Javascript-Projects-/user-search-filter-cards/)
 
 More projects will be added regularly. Star this repo to stay updated! ⭐
 
-## 🚀 Getting Started
+### 🚀 Getting Started
 
 ### Prerequisites
 
