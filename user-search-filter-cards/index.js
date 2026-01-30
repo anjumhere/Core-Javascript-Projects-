@@ -59,113 +59,88 @@ const users = [
     pic: "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=400&h=300&fit=crop",
     bio: "Learning one concept at a time 🔍",
   },
-  {
-    name: "Lily Anderson 🌙",
-    pic: "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=400&h=300&fit=crop",
-    bio: "Dreaming under city lights ✨",
-  },
-  {
-    name: "Chris Walker 🛠️",
-    pic: "https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?w=400&h=300&fit=crop",
-    bio: "Fixing problems, one line at a time 🔧",
-  },
-  {
-    name: "Grace Hall 🎤",
-    pic: "https://images.unsplash.com/photo-1520813792240-56fc4a3765a7?w=400&h=300&fit=crop",
-    bio: "Words have power 🗣️",
-  },
-  {
-    name: "Kevin Adams 🏍️",
-    pic: "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=400&h=300&fit=crop",
-    bio: "Life is better on two wheels 🛣️",
-  },
-
-  {
-    name: "Noah Parker 🌌",
-    pic: "https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?w=400&h=300&fit=crop",
-    bio: "Exploring ideas beyond limits 🌠",
-  },
-  {
-    name: "Avery Collins 🖌️",
-    pic: "https://images.unsplash.com/photo-1542206395-9feb3edaa68d?w=400&h=300&fit=crop",
-    bio: "Art is my safe place 🎨",
-  },
-  {
-    name: "Justin Rivera 📊",
-    pic: "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=400&h=300&fit=crop",
-    bio: "Data tells the real story 📈",
-  },
-  {
-    name: "Chloe Bennett 🌿",
-    pic: "https://images.unsplash.com/photo-1520813792240-56fc4a3765a7?w=400&h=300&fit=crop",
-    bio: "Peace over chaos 🍃",
-  },
-  {
-    name: "Logan Turner 🎮",
-    pic: "https://images.unsplash.com/photo-1511367461989-f85a21fda167?w=400&h=300&fit=crop",
-    bio: "Gaming is not a hobby, it's life 🎮",
-  },
-  {
-    name: "Madison Wright 💄",
-    pic: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=400&h=300&fit=crop",
-    bio: "Confidence is the best makeup 💋",
-  },
-  {
-    name: "Brandon Hughes 🧭",
-    pic: "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=400&h=300&fit=crop",
-    bio: "Finding my own direction 🧭",
-  },
-  {
-    name: "Isabella Foster 🌺",
-    pic: "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=400&h=300&fit=crop",
-    bio: "Grace in everything 🌸",
-  },
 ];
 
-// show all users
-// filter images upon searching
-// show filtered images upon searching
-function showUser(arr) {
-  arr.forEach(function (user) {
-    const card = document.createElement("div");
-    card.className = "card";
+// Create card element
+function createCard(user) {
+  const card = document.createElement("div");
+  card.className = "card";
 
-    const img = document.createElement("img");
-    img.src = user.pic;
+  const img = document.createElement("img");
+  img.src = user.pic;
 
-    const blurLayer = document.createElement("div");
-    blurLayer.className = "blur-layer";
+  const blurLayer = document.createElement("div");
+  blurLayer.className = "blur-layer";
 
-    const content = document.createElement("div");
-    content.className = "content";
+  const content = document.createElement("div");
+  content.className = "content";
 
-    const h3 = document.createElement("h3");
-    h3.textContent = user.name;
+  const h3 = document.createElement("h3");
+  h3.textContent = user.name;
 
-    const p = document.createElement("p");
-    p.textContent = user.bio;
+  const p = document.createElement("p");
+  p.textContent = user.bio;
 
-    content.appendChild(h3);
-    content.appendChild(p);
+  content.appendChild(h3);
+  content.appendChild(p);
 
-    card.appendChild(img);
-    card.appendChild(blurLayer);
-    card.appendChild(content);
+  card.appendChild(img);
+  card.appendChild(blurLayer);
+  card.appendChild(content);
 
-    // To add it to the container:
-    document.getElementById("cardsContainer").appendChild(card);
-  });
+  return card;
 }
-showUser(users);
 
+// Initialize carousel
+function initCarousel() {
+  const cardsContainer = document.getElementById("cardsContainer");
+
+  // Create wrapper for the track
+  const track = document.createElement("div");
+  track.className = "cards-track";
+
+  // Duplicate users array for infinite scroll effect
+  const duplicatedUsers = [...users, ...users];
+
+  // Add all cards to track
+  duplicatedUsers.forEach((user) => {
+    track.appendChild(createCard(user));
+  });
+
+  cardsContainer.appendChild(track);
+}
+
+// Search functionality
 const inp = document.querySelector("#searchInput");
 inp.addEventListener("input", () => {
-  let newUsers = users.filter((user) => {
-    return user.name.toLowerCase().startsWith(inp.value.toLowerCase());
-  });
+  const searchValue = inp.value.toLowerCase().trim();
 
-  document.getElementById("cardsContainer").innerHTML = "";
-  showUser(newUsers);
+  if (searchValue === "") {
+    // If search is empty, show carousel
+    const cardsContainer = document.getElementById("cardsContainer");
+    cardsContainer.innerHTML = "";
+    initCarousel();
+  } else {
+    // Filter users and show in grid
+    let filteredUsers = users.filter((user) => {
+      return user.name.toLowerCase().includes(searchValue);
+    });
+
+    const cardsContainer = document.getElementById("cardsContainer");
+    cardsContainer.innerHTML = "";
+
+    // Remove carousel classes and show as grid
+    cardsContainer.style.overflow = "visible";
+    cardsContainer.style.display = "grid";
+    cardsContainer.style.gridTemplateColumns = "repeat(auto-fill, minmax(220px, 1fr))";
+    cardsContainer.style.gap = "20px";
+    cardsContainer.style.padding = "0";
+
+    filteredUsers.forEach((user) => {
+      cardsContainer.appendChild(createCard(user));
+    });
+  }
 });
 
-console.log(inp);
+// Initialize on page load
+initCarousel();
