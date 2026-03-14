@@ -505,7 +505,7 @@ SOFTWARE.
 **Anjum**
 
 - 🐱 GitHub: [@anjumhere](https://github.com/anjumhere)
-- 📧 Email: anjum@example.com
+- 📧 Email: anjumcode12@gmail.com 
 
 ### About Me
 
