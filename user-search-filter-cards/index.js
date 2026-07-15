@@ -65,48 +65,36 @@ const users = [
 function createCard(user) {
   const card = document.createElement("div");
   card.className = "card";
-
   const img = document.createElement("img");
   img.src = user.pic;
-
   const blurLayer = document.createElement("div");
   blurLayer.className = "blur-layer";
-
   const content = document.createElement("div");
   content.className = "content";
-
   const h3 = document.createElement("h3");
   h3.textContent = user.name;
-
   const p = document.createElement("p");
   p.textContent = user.bio;
-
   content.appendChild(h3);
   content.appendChild(p);
-
   card.appendChild(img);
   card.appendChild(blurLayer);
   card.appendChild(content);
-
   return card;
 }
 
 // Initialize carousel
 function initCarousel() {
   const cardsContainer = document.getElementById("cardsContainer");
-
   // Create wrapper for the track
   const track = document.createElement("div");
   track.className = "cards-track";
-
   // Duplicate users array for infinite scroll effect
   const duplicatedUsers = [...users, ...users];
-
   // Add all cards to track
   duplicatedUsers.forEach((user) => {
     track.appendChild(createCard(user));
   });
-
   cardsContainer.appendChild(track);
 }
 
@@ -114,10 +102,16 @@ function initCarousel() {
 const inp = document.querySelector("#searchInput");
 inp.addEventListener("input", () => {
   const searchValue = inp.value.toLowerCase().trim();
+  // looked up once here instead of separately in each branch below
+  const cardsContainer = document.getElementById("cardsContainer");
 
   if (searchValue === "") {
-    // If search is empty, show carousel
-    const cardsContainer = document.getElementById("cardsContainer");
+    // If search is empty, show carousel again.
+    // Clear out the inline grid styles applied during search (display,
+    // overflow, gridTemplateColumns, gap, padding) — otherwise the container
+    // stays stuck looking like a grid even after the carousel is rebuilt,
+    // since inline styles override the stylesheet's carousel layout rules.
+    cardsContainer.removeAttribute("style");
     cardsContainer.innerHTML = "";
     initCarousel();
   } else {
@@ -125,17 +119,13 @@ inp.addEventListener("input", () => {
     let filteredUsers = users.filter((user) => {
       return user.name.toLowerCase().includes(searchValue);
     });
-
-    const cardsContainer = document.getElementById("cardsContainer");
     cardsContainer.innerHTML = "";
-
     // Remove carousel classes and show as grid
     cardsContainer.style.overflow = "visible";
     cardsContainer.style.display = "grid";
     cardsContainer.style.gridTemplateColumns = "repeat(auto-fill, minmax(220px, 1fr))";
     cardsContainer.style.gap = "20px";
     cardsContainer.style.padding = "0";
-
     filteredUsers.forEach((user) => {
       cardsContainer.appendChild(createCard(user));
     });
