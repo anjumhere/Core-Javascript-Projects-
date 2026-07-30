@@ -8,7 +8,10 @@ const taxSlabs = [
   { limit: Infinity, rate: 0.35, fixedTax: 616000, previousLimit: 4100000 },
 ];
 
-function switchTab(tabName) {
+// FIX: switchTab now receives `evt` explicitly instead of relying on the
+// implicit global `event` object (deprecated / breaks in strict mode).
+// Update your HTML: onclick="switchTab(event, 'tabName')"
+function switchTab(evt, tabName) {
   // Hide all tabs
   const contents = document.querySelectorAll(".tab-content");
   contents.forEach((content) => content.classList.remove("active"));
@@ -19,7 +22,7 @@ function switchTab(tabName) {
 
   // Show selected tab
   document.getElementById(tabName).classList.add("active");
-  event.target.classList.add("active");
+  evt.target.classList.add("active");
 }
 
 function calculateTax(income) {
@@ -45,7 +48,9 @@ function calculateSalaryTax() {
   const salary = parseFloat(document.getElementById("annualSalary").value);
   const type = document.getElementById("salaryType").value;
 
-  if (!salary || salary < 0) {
+  // FIX: was `!salary || salary < 0`, which incorrectly rejected 0 as invalid
+  // (0 is falsy in JS). Now uses isNaN() so 0 is accepted.
+  if (isNaN(salary) || salary < 0) {
     alert("Please enter a valid salary amount");
     return;
   }
@@ -61,42 +66,42 @@ function calculateSalaryTax() {
 
   if (type === "annual") {
     resultHTML = `
-                    <div class="result-item">
-                        <span class="result-label">Gross Annual Salary:</span>
-                        <span class="result-value">PKR ${salary.toLocaleString()}</span>
-                    </div>
-                    <div class="result-item">
-                        <span class="result-label">Annual Tax:</span>
-                        <span class="result-value">PKR ${annualTax.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
-                    </div>
-                    <div class="result-item">
-                        <span class="result-label">Effective Tax Rate:</span>
-                        <span class="result-value">${effectiveRate}%</span>
-                    </div>
-                    <div class="result-item">
-                        <span class="result-label">Net Annual Salary:</span>
-                        <span class="result-value">PKR ${netAnnualSalary.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
-                    </div>
-                `;
+      <div class="result-item">
+        <span class="result-label">Gross Annual Salary:</span>
+        <span class="result-value">PKR ${salary.toLocaleString()}</span>
+      </div>
+      <div class="result-item">
+        <span class="result-label">Annual Tax:</span>
+        <span class="result-value">PKR ${annualTax.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
+      </div>
+      <div class="result-item">
+        <span class="result-label">Effective Tax Rate:</span>
+        <span class="result-value">${effectiveRate}%</span>
+      </div>
+      <div class="result-item">
+        <span class="result-label">Net Annual Salary:</span>
+        <span class="result-value">PKR ${netAnnualSalary.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
+      </div>
+    `;
   } else {
     resultHTML = `
-                    <div class="result-item">
-                        <span class="result-label">Gross Monthly Salary:</span>
-                        <span class="result-value">PKR ${(salary / 12).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
-                    </div>
-                    <div class="result-item">
-                        <span class="result-label">Monthly Tax:</span>
-                        <span class="result-value">PKR ${monthlyTax.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
-                    </div>
-                    <div class="result-item">
-                        <span class="result-label">Effective Tax Rate:</span>
-                        <span class="result-value">${effectiveRate}%</span>
-                    </div>
-                    <div class="result-item">
-                        <span class="result-label">Net Monthly Salary:</span>
-                        <span class="result-value">PKR ${netMonthlySalary.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
-                    </div>
-                `;
+      <div class="result-item">
+        <span class="result-label">Gross Monthly Salary:</span>
+        <span class="result-value">PKR ${(salary / 12).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
+      </div>
+      <div class="result-item">
+        <span class="result-label">Monthly Tax:</span>
+        <span class="result-value">PKR ${monthlyTax.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
+      </div>
+      <div class="result-item">
+        <span class="result-label">Effective Tax Rate:</span>
+        <span class="result-value">${effectiveRate}%</span>
+      </div>
+      <div class="result-item">
+        <span class="result-label">Net Monthly Salary:</span>
+        <span class="result-value">PKR ${netMonthlySalary.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
+      </div>
+    `;
   }
 
   const resultBox = document.getElementById("salaryResult");
@@ -107,7 +112,8 @@ function calculateSalaryTax() {
 function calculateBusinessTax() {
   const income = parseFloat(document.getElementById("businessIncome").value);
 
-  if (!income || income < 0) {
+  // FIX: was `!income || income < 0`, incorrectly rejecting 0.
+  if (isNaN(income) || income < 0) {
     alert("Please enter a valid income amount");
     return;
   }
@@ -117,23 +123,23 @@ function calculateBusinessTax() {
   const effectiveRate = income > 0 ? ((tax / income) * 100).toFixed(2) : 0;
 
   const resultHTML = `
-                <div class="result-item">
-                    <span class="result-label">Gross Business Income:</span>
-                    <span class="result-value">PKR ${income.toLocaleString()}</span>
-                </div>
-                <div class="result-item">
-                    <span class="result-label">Tax Payable:</span>
-                    <span class="result-value">PKR ${tax.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
-                </div>
-                <div class="result-item">
-                    <span class="result-label">Effective Tax Rate:</span>
-                    <span class="result-value">${effectiveRate}%</span>
-                </div>
-                <div class="result-item">
-                    <span class="result-label">Net Income After Tax:</span>
-                    <span class="result-value">PKR ${netIncome.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
-                </div>
-            `;
+    <div class="result-item">
+      <span class="result-label">Gross Business Income:</span>
+      <span class="result-value">PKR ${income.toLocaleString()}</span>
+    </div>
+    <div class="result-item">
+      <span class="result-label">Tax Payable:</span>
+      <span class="result-value">PKR ${tax.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
+    </div>
+    <div class="result-item">
+      <span class="result-label">Effective Tax Rate:</span>
+      <span class="result-value">${effectiveRate}%</span>
+    </div>
+    <div class="result-item">
+      <span class="result-label">Net Income After Tax:</span>
+      <span class="result-value">PKR ${netIncome.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
+    </div>
+  `;
 
   const resultBox = document.getElementById("businessResult");
   resultBox.innerHTML = resultHTML;
@@ -145,7 +151,15 @@ function compareIncome() {
   const end = parseFloat(document.getElementById("endIncome").value);
   const step = parseFloat(document.getElementById("stepIncome").value);
 
-  if (!start || !end || !step || start < 0 || end < start || step <= 0) {
+  // FIX: was `!start || !end || !step`, incorrectly rejecting 0 for start/end.
+  if (
+    isNaN(start) ||
+    isNaN(end) ||
+    isNaN(step) ||
+    start < 0 ||
+    end < start ||
+    step <= 0
+  ) {
     alert("Please enter valid values");
     return;
   }
@@ -153,21 +167,25 @@ function compareIncome() {
   let resultHTML =
     '<h3 style="color: #667eea; margin-bottom: 15px;">Tax Comparison</h3>';
 
-  for (let income = start; income <= end; income += step) {
+  // FIX: replaced `income += step` accumulation (prone to floating-point
+  // drift over many iterations) with an integer counter driving the value.
+  const steps = Math.floor((end - start) / step);
+  for (let i = 0; i <= steps; i++) {
+    const income = start + i * step;
     const tax = calculateTax(income);
     const netIncome = income - tax;
     const effectiveRate = income > 0 ? ((tax / income) * 100).toFixed(2) : 0;
 
     resultHTML += `
-                    <div class="slab-item">
-                        <div><strong>Income: PKR ${income.toLocaleString()}</strong></div>
-                        <div style="margin-top: 8px;">
-                            Tax: PKR ${tax.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })} 
-                            (${effectiveRate}%) | 
-                            Net: PKR ${netIncome.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
-                        </div>
-                    </div>
-                `;
+      <div class="slab-item">
+        <div><strong>Income: PKR ${income.toLocaleString()}</strong></div>
+        <div style="margin-top: 8px;">
+          Tax: PKR ${tax.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+          (${effectiveRate}%) |
+          Net: PKR ${netIncome.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+        </div>
+      </div>
+    `;
   }
 
   const resultBox = document.getElementById("compareResult");
