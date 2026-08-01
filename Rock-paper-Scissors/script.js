@@ -7,13 +7,20 @@ const statusBtn = document.getElementById("btn");
 let userScore = 0;
 let compScore = 0;
 
+// Rules: key beats value
+const WIN_RULES = {
+  rock: "scissors",
+  paper: "rock",
+  scissors: "paper",
+};
+
 // Initial state
 statusBtn.textContent = "Start Playing";
 resultEl.textContent = "Choose Rock, Paper or Scissors";
 
 // Generate computer choice
 const genCompChoice = () => {
-  const options = ["rock", "paper", "scissors"];
+  const options = Object.keys(WIN_RULES);
   const randomIndex = Math.floor(Math.random() * options.length);
   return options[randomIndex];
 };
@@ -48,11 +55,7 @@ const playGame = (userChoice) => {
     return;
   }
 
-  const userWins =
-    (userChoice === "rock" && compChoice === "scissors") ||
-    (userChoice === "paper" && compChoice === "rock") ||
-    (userChoice === "scissors" && compChoice === "paper");
-
+  const userWins = WIN_RULES[userChoice] === compChoice;
   showWinner(userWins, userChoice, compChoice);
 };
 
