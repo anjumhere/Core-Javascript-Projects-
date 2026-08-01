@@ -109,7 +109,6 @@ const calculator = {
 
   // Update the display
   updateDisplay() {
-    const display = document.querySelector(".display");
     display.value = this.displayValue;
   },
 };
@@ -117,6 +116,7 @@ const calculator = {
 // Event Listener Setup
 const display = document.querySelector(".display");
 const buttons = document.querySelectorAll(".btn");
+const OPERATORS = ["+", "-", "*", "/"];
 
 buttons.forEach((button) => {
   button.addEventListener("click", (e) => {
@@ -136,12 +136,7 @@ buttons.forEach((button) => {
       calculator.appendNumber(".");
     }
     // Operators (+, -, *, /)
-    else if (
-      buttonText === "+" ||
-      buttonText === "-" ||
-      buttonText === "*" ||
-      buttonText === "/"
-    ) {
+    else if (OPERATORS.includes(buttonText)) {
       calculator.handleOperator(buttonText);
     }
     // Percentage
@@ -190,18 +185,9 @@ document.addEventListener("keydown", (e) => {
     calculator.appendNumber(".");
   }
   // Operators
-  else if (key === "+") {
+  else if (OPERATORS.includes(key)) {
     e.preventDefault();
-    calculator.handleOperator("+");
-  } else if (key === "-") {
-    e.preventDefault();
-    calculator.handleOperator("-");
-  } else if (key === "*") {
-    e.preventDefault();
-    calculator.handleOperator("*");
-  } else if (key === "/") {
-    e.preventDefault();
-    calculator.handleOperator("/");
+    calculator.handleOperator(key);
   }
   // Equals (Enter or =)
   else if (key === "Enter" || key === "=") {
