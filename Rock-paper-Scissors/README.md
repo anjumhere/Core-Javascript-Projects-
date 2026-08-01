@@ -1,26 +1,58 @@
-Rock Paper Scissors Game
+# Rock Paper Scissors
 
-A fully functional Rock Paper Scissors game built using HTML, CSS, and vanilla JavaScript. The game allows users to play against the computer with real-time result updates and a score tracking system.
+A simple browser-based Rock, Paper, Scissors game built with vanilla JavaScript. Play against the computer and track your score in real time.
 
-Features
+## Features
 
-Play Rock, Paper, or Scissors against the computer
+- Click-based gameplay — choose Rock, Paper, or Scissors
+- Computer opponent with randomized choice
+- Live score tracking for both player and computer
+- Win/lose/draw result messages after each round
+- Dynamic status button that updates based on the outcome (e.g. "You Win", "Computer Wins", "Game Draw")
 
-Random computer choice generation
+## Tech Stack
 
-Real-time win, lose, or draw feedback
+- HTML
+- CSS
+- Vanilla JavaScript (no frameworks or libraries)
 
-Score tracking for both user and computer
+## How It Works
 
-Simple and interactive user interface
+Each choice element (Rock, Paper, Scissors) has a click listener attached. When clicked:
 
-Technologies Used
+1. The computer's choice is randomly generated.
+2. If both choices match, it's a draw.
+3. Otherwise, the result is determined using a win-rules lookup (each choice maps to the choice it beats).
+4. The score and result message are updated on screen accordingly.
 
-HTML
+## Getting Started
 
-CSS
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/anjumhere/<repo-name>.git
+   ```
+2. Open `index.html` in your browser — no build step or dependencies required.
 
-JavaScript (Vanilla JS)
+## Project Structure
 
-Purpose of This Project
-This project was built to practice core JavaScript concepts such as event handling, conditional logic, random number generation, and DOM manipulation while creating a complete and functional game.
+```
+.
+├── index.html
+├── style.css
+├── script.js
+└── README.md
+```
+
+## Possible Improvements
+
+- Add a "Play Again" / reset scores button
+- Add animations for choice selection and results
+- Add a best-of-N match mode
+
+## Author
+
+Built by [Anjum](https://github.com/anjumhere).
+
+## License
+
+This project is open source and available under the [MIT License](LICENSE).
